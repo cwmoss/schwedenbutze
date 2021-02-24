@@ -61,6 +61,7 @@ export default {
 
   &__title {
     margin-top: 0;
+    color: var(--post-title-color);
   }
 
   &:hover {

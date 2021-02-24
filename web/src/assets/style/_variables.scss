@@ -12,6 +12,7 @@ body {
  	--title-color: #fff;
  	--link-color: #fff;
  	--border-color:  #000;
+	--post-title-color: #000;
   --space: 3.5rem;
   --content-width: 860px;
   --header-height: 80px;
@@ -39,4 +40,5 @@ body[data-theme="dark"] {
  	--body-color: #ced8de;
  	--title-color: #fff;
  	--link-color: #eee;
+	--post-title-color: #fff;
 }
