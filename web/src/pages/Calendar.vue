@@ -15,7 +15,7 @@
             :maxDate="maxDate"
             :singleDatePicker=false
             :timePicker=false
-            
+            :ranges=false
             :showWeekNumbers=true
             :showDropdowns=true
             :autoApply=false
@@ -24,7 +24,7 @@
             @update="updateValues"
             @toggle="checkOpen" 
     >
-        <template v-slot:input="picker" style="min-width: 350px;">
+        <template v-slot:input="picker" style="xmin-width: 350px;">
             {{ picker.startDate |custdate }} - {{ picker.endDate |custdate}}
         </template>
     </date-range-picker>
@@ -80,3 +80,8 @@ export default {
   }
 }
 </script>
+
+<style>
+/*  @import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
+*/
+</style>
