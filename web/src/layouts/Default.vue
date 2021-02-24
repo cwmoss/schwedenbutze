@@ -3,6 +3,10 @@
     <header class="header">
       <div class="header__left">
         <header-logo v-if="showLogo" />
+
+          <g-link class="" to="/calendar">
+            <span class="logo__text">Zum Kalender</span>
+          </g-link>
       </div>
 
       <div class="header__right">

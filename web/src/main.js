@@ -14,4 +14,11 @@ export default function(Vue, { router, head, isClient }) {
 
   // Inject global image URL builder
   Vue.prototype.$urlForImage = urlForImage
+
+  Vue.filter('custdate', function(value) {
+	  if (value) {
+	    return new Intl.DateTimeFormat('de-DE').format(value)
+	  }
+	})
 }
+
