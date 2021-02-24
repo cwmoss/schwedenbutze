@@ -7,7 +7,7 @@
     -->
     <author-card :show-title="true" />
 
-    <date-range-picker
+    <date-range-picker v-if="ready" 
             ref="picker"
             :opens="'inline'"
             :locale-data="{ firstDay: 1, format: 'DD-MM-YYYY' }"
@@ -64,6 +64,7 @@ export default {
   },
   data () {
       return {
+		  ready: false,
 		  reserved: {},
         minDate: "2021-02-01",
         maxDate: "2024-06-30",
@@ -106,6 +107,7 @@ export default {
 
 		})
 		console.log("res days", this.reserved)
+		this.ready=true
 	}
   },
 	mounted: function () {
