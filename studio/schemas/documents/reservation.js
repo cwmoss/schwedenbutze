@@ -1,4 +1,6 @@
-import {format, add, parse} from 'date-fns'
+import * as util from '../../util'
+
+// import {format, add, parse} from 'date-fns'
 
 export default {
   name: 'reservation',
@@ -84,9 +86,10 @@ export default {
       departure: 'departure'
     },
     prepare ({name, arrival, departure}) {
+      var days = util.days(arrival, departure)
       return {
-        title: name,
-        subtitle: arrival + ' - ' + departure
+        title: `${name} (${days})`,
+        subtitle: util.format_interval(arrival, departure)
       }
     }
   }
