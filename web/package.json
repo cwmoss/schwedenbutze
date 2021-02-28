@@ -14,7 +14,9 @@
     "gridsome": "^0.7.23",
     "gridsome-source-sanity": "^1.0.5",
     "sanity-blocks-vue-component": "^0.1.0",
-    "vue2-daterange-picker": "^0.6.3"
+    "vue-functional-calendar": "^2.9.2",
+    "vue2-daterange-picker": "^0.6.3",
+    "vuelendar": "^1.0.15"
   },
   "devDependencies": {
     "node-sass": "^4.14.1",

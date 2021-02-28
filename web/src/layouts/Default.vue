@@ -4,7 +4,7 @@
       <div class="header__left">
         <header-logo v-if="showLogo" />
 
-          <g-link class="" to="/calendar">
+          <g-link class="" to="/booking">
             <span class="logo__text">Zum Kalender</span>
           </g-link>
       </div>
