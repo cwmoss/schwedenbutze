@@ -82,7 +82,8 @@ export default () =>
         .title('Doku')
         .child(
 
-          S.documentTypeList('documentation')
+        S.documentTypeList('documentation')
+        .defaultOrdering([{field: 'title', direction: 'asc'}])
         .title('Doks')
         .child(documentId =>
           S.document()
