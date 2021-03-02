@@ -3,6 +3,8 @@
 npm install date-fns --save
 
 this needs version 2
+
+// format(add(Rule.valueOfField('arrival'), {days:1}), 'YYYY-MM-DD'))
 */
 
 import { format, add, parse, isSameYear, isSameMonth, formatDistanceStrict } from 'date-fns'
