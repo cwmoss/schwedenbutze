@@ -3,6 +3,18 @@
 
     <author-card :show-title="true" />
 
+  <h1 class="post-title__text">{{ $page.post.title }}</h1>
+
+  <div class="intro">
+
+    <block-content
+                  class="post__content"
+                  :blocks="$page.post.intro"
+                  v-if="$page.post.intro"
+                />
+
+  </div>
+
 	<v-range-selector v-if="ready"
 	  :start-date.sync="range.start"
 	  :end-date.sync="range.end"
@@ -10,9 +22,9 @@
 		@update:startDate="range_selected"
 		@update:endDate="range_selected"
 	/>
-	
+
 	<button :disabled="!range_ok">Go on</button>
-	
+
   </Layout>
 
 
@@ -26,7 +38,10 @@
       dataset
     }
   }
-  
+  post: sanityPost (path: "/booking-content") {
+    title
+    intro: _rawExcerpt(resolveReferences: {maxDepth: 5})
+  }
 }
 
 </page-query>
@@ -35,15 +50,17 @@
 
 import * as util from '../utils/util'
 
+import BlockContent from '~/components/BlockContent'
 import AuthorCard from '~/components/AuthorCard'
 import VRangeSelector from 'vuelendar/components/vl-range-selector'
 
 
 
 export default {
-  components: { 
+  components: {
     VRangeSelector,
-    AuthorCard
+    AuthorCard,
+    BlockContent
   },
   metaInfo: {
     title: 'Kalender'
@@ -90,24 +107,24 @@ export default {
 			var last = days.length-1
 			days.forEach(function(e, i){
 				var weight=(i==0 || i==last)?1:2
-				
+
 				if(res[e]) res[e]++
 				else res[e]=weight
 			})
 			return res
 		}, {})
-		
+
 		console.log("res days", this.reserved)
 		this.reserved = reserved
 		this.ready=true
 	}
   },
 	mounted: function () {
-    var reserved = [['2021/03/14', '2021/03/17'], ['2021/03/19', '2021/03/21' ], 
+    var reserved = [['2021/03/14', '2021/03/17'], ['2021/03/19', '2021/03/21' ],
 			['2021/03/22', '2021/03/25'], ['2021/03/25', '2021/03/28']]
 	 this.setup_reserved(reserved)
     console.log('mounted', reserved)
-	
+
   }
 }
 </script>

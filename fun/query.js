@@ -2,8 +2,8 @@ const sanityClient = require('@sanity/client')
 const client = sanityClient({
   projectId: 'emjk7lsc',
   dataset: 'production',
-  token: process.env.S_TOKEN||'', // or leave blank to be anonymous user
-  useCdn: true // `false` if you want to ensure fresh data
+  token: '', //process.env.S_TOKEN||'', // or leave blank to be anonymous user
+  useCdn: false // `false` if you want to ensure fresh data
 })
 
 const now = new Date()
