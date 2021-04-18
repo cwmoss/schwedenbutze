@@ -1,34 +1,29 @@
 <template>
   <Layout :show-logo="false">
-    <!-- kalender eimer
- :linkedCalendars="linkedCalendars"
-:timePicker24Hour="timePicker24Hour"
-:dateFormat="dateFormat"
+    <!-- 
+		// v-model="calendarData"
+
+    // v-on:changedMonth="changedMonth"
+    // v-on:changedYear="changedYear"
+
+    // :sundayStart="true"
+    // :date-format="'dd/mm/yyyy'"
+    // :is-date-range="true"
+    // :is-date-picker="true"
     -->
     <author-card :show-title="true" />
 
-    <date-range-picker v-if="ready" 
-            ref="picker"
-            :opens="'inline'"
-            :locale-data="{ firstDay: 1, format: 'DD-MM-YYYY' }"
-            :minDate="minDate" 
-            :maxDate="maxDate"
-            :singleDatePicker=false
-            :timePicker=false
-            :ranges=false
-            :showWeekNumbers=true
-            :showDropdowns=true
-            :autoApply=false
-            :closeOnEsc=false
-				:date-format="mark_reserved"
-            v-model="dateRange"
-            @update="updateValues"
-            @toggle="checkOpen" 
-    >
-        <template v-slot:input="picker" style="xmin-width: 350px;">
-            {{ picker.startDate |custdate }} - {{ picker.endDate |custdate}}
-        </template>
-    </date-range-picker>
+	<FunctionalCalendar
+		v-model="calendarData"
+		:disabledDates="disabled_dates"
+		:isDateRange="true"
+		:isMultiple="true"
+		:calendarsCount="2"
+		:minSelDays="1" 
+		:maxSelDays="60"
+		:dateFormat="'yyyy-mm-dd'"
+		@selectedDaysCount="range_selected"
+	></FunctionalCalendar>
 
   </Layout>
 </template>
@@ -50,13 +45,13 @@
 import { eachDayOfInterval, format } from 'date-fns'
 
 import AuthorCard from '~/components/AuthorCard'
-import DateRangePicker from 'vue2-daterange-picker'
+import { FunctionalCalendar } from 'vue-functional-calendar';
 
-import 'vue2-daterange-picker/dist/vue2-daterange-picker.css'
+
 
 export default {
   components: { 
-    DateRangePicker,
+    FunctionalCalendar,
     AuthorCard
   },
   metaInfo: {
@@ -65,6 +60,8 @@ export default {
   data () {
       return {
 		  ready: false,
+		  calendarData: {},
+		  disabled_dates: ['beforeToday', '1/4/2021', '2/4/2021'],
 		  reserved: {},
         minDate: "2021-02-01",
         maxDate: "2024-06-30",
@@ -76,6 +73,9 @@ export default {
       }
   },
   methods:{
+	range_selected(ev){
+		console.log("range selected", ev, this.calendarData.dateRange, this.calendarData)
+	},
     updateValues(){
       console.log("update")
     },
@@ -120,6 +120,7 @@ export default {
 </script>
 
 <style>
-/*  @import "https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css";
-*/
+.vfc-disabled{
+	text-decoration:line-through;
+}
 </style>
