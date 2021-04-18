@@ -1,3 +1,10 @@
+
+
+    npm uninstall node-sass
+    npm install node-sass@4.14.1
+
+
+
 S.listItem()
       .title('Reservations')
       .child(
@@ -47,7 +54,7 @@ const diff=(e,t)=>Math.floor((new Date(e)-new Date(t))/864e5);
 
 // or
 
-const diff=(a,b)=>(new Date(a)-new Date(b))/864e5|0; 
+const diff=(a,b)=>(new Date(a)-new Date(b))/864e5|0;
 
 // use
 diff('1/1/2001', '1/1/2000')
