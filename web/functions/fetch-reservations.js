@@ -2,6 +2,9 @@
 npm install netlify-cli -g
 netlify dev
 http://localhost:8888/.netlify/functions/fetch-reservations
+
+wie funktioniert das deployment von der kommandozeile?
+monorepo?
 */
 
 const sanityClient = require('@sanity/client')
