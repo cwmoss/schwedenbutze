@@ -9,3 +9,6 @@
 
 # lerna files
 /lerna-debug.log
+
+# Workspace
+/schwedenbutze.code-workspace
