@@ -1,0 +1,95 @@
+S.listItem()
+      .title('Reservations')
+      .child(
+        S.list()
+        .title('Reservations')
+        .items([
+          S.listItem()
+          .title('Up next')
+          .child(
+            S.documentList()
+              .title('Upcoming Reservations')
+              .filter(`_type == "reservation" && arrival >= $from || departure >= $from`)
+              .params({from: new Date().toISOString()})
+          ),
+          S.listItem()
+          .title('Past')
+          .child(
+            S.documentList()
+              .title('Past Reservations')
+              .filter(`_type == "reservation" && departure < $today`)
+              .params({today: new Date().toISOString()})
+          ),
+          S.documentTypeListItem('reservation').title('All Reservations')
+        ])
+      )
+
+
+
+
+
+https://stackoverflow.com/questions/542938/how-do-i-get-the-number-of-days-between-two-dates-in-javascript?page=2&tab=votes#tab-top
+(seite2)
+
+const diff=(e,t)=>Math.floor((new Date(e).getTime()-new Date(t).getTime())/1000*60*60*24);
+
+// or
+
+const diff=(e,t)=>Math.floor((new Date(e).getTime()-new Date(t).getTime())/86400000);
+
+// or
+
+const diff=(e,t)=>Math.floor((new Date(e).getTime()-new Date(t).getTime())/864e5);
+
+// or
+
+const diff=(e,t)=>Math.floor((new Date(e)-new Date(t))/864e5);
+
+// or
+
+const diff=(a,b)=>(new Date(a)-new Date(b))/864e5|0; 
+
+// use
+diff('1/1/2001', '1/1/2000')
+
+const diff=(a,b)=>(new Date(a)-new Date(b))/864e5|0;
+undefined
+diff("2021/03/1", "2021/02/28")
+1
+diff("2021/03/1", "2021/02/01")
+28
+diff("2021/03/01", "2021/02/01")
+28
+diff("2021/02/28", "2021/02/01")
+27
+diff("2021/02/02", "2021/02/01")
+1
+diff("2020/03/1", "2020/02/28")
+2
+diff("2020/03/29", "2020/03/30")
+0
+
+
+function parseDate(str) {
+    var mdy = str.split('/');
+    return new Date(mdy[2], mdy[0]-1, mdy[1]);
+}
+
+*** das hier funktioniert!
+function datediff(first, second) {
+	first = new Date(first)
+	second = new Date(second)
+    // Take the difference between the dates and divide by milliseconds per day.
+    // Round to nearest whole number to deal with DST.
+    return Math.round((first-second)/(1000*60*60*24));
+}
+
+datediff('2020/03/01', "2020/02/28")
+1
+datediff("2020/03/30", "2020/03/29")
+1
+datediff("2020/10/25", "2020/10/24")
+1
+datediff("2020/10/26", "2020/10/25")
+
+function ddiff=(a,b)=>(new Date(a)-new Date(b))/864e5|0;
