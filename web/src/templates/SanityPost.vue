@@ -1,9 +1,9 @@
 <template>
   <Layout>
+
     <div class="post-title">
       <h1 class="post-title__text">{{ $page.post.title }}</h1>
 
-      <post-meta :post="$page.post" v-if="$page.post" />
     </div>
 
     <div class="post content-box">
@@ -30,7 +30,6 @@
       <!-- Add comment widgets here -->
     </div>
 
-    <author-card class="post-author" />
   </Layout>
 </template>
 
@@ -38,11 +37,9 @@
 import BlockContent from '~/components/BlockContent'
 import PostMeta from '~/components/PostMeta'
 import PostTags from '~/components/PostTags'
-import AuthorCard from '~/components/AuthorCard'
 
 export default {
   components: {
-    AuthorCard,
     PostMeta,
     PostTags,
     BlockContent
@@ -109,6 +106,9 @@ query Post ($id: ID!) {
 }
 
 .post {
+
+  background-color: var(--bg-color);
+  
   &__header {
     width: calc(100% + var(--space) * 2);
     margin-left: calc(var(--space) * -1);
@@ -127,12 +127,13 @@ query Post ($id: ID!) {
   }
 
   &__content {
+
     h2:first-child {
       margin-top: 0;
     }
 
     p:first-of-type {
-      font-size: 1.2em;
+      font-size: 1em;
       color: var(--body-color);
     }
 

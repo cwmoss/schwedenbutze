@@ -3,25 +3,25 @@
     <header class="header">
       <div class="header__left">
         <header-logo v-if="showLogo" />
-
-          <g-link class="" to="/booking">
-            <span class="logo__text">Zum Kalender</span>
-          </g-link>
+        <navigation />
       </div>
 
       <div class="header__right">
+
         <toggle-theme />
       </div>
     </header>
-
+    
     <main class="main">
-      <slot />
+      <div>
+        <slot /> <!-- Default slot -->
+      </div>
     </main>
 
     <footer class="footer">
       <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}.</span>
       <span class="footer__links">
-        Powered by Power
+        Powered by Zorro
       </span>
     </footer>
   </div>
@@ -30,17 +30,19 @@
 <script>
 import HeaderLogo from '~/components/HeaderLogo'
 import ToggleTheme from '~/components/ToggleTheme'
+import Navigation from '~/components/Navigation'
 
 export default {
   props: {
     showLogo: {
       type: Boolean,
-      default: true
+      default: false
     }
   },
   components: {
     HeaderLogo,
-    ToggleTheme
+    ToggleTheme,
+    Navigation
   }
 }
 </script>
@@ -54,6 +56,8 @@ export default {
   padding: 0 calc(var(--space) / 2);
   top: 0;
   z-index: 10;
+  //background-color: var(--bg-color);
+  background-color: #fff;
 
   &__left,
   &__right {

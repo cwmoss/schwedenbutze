@@ -71,7 +71,7 @@ export default {
 .toggle-theme {
   background-color: transparent;
   border: 0;
-  color: var(--body-color);
+  color: var(--bg-color);
   cursor: pointer;
 
   &:hover {

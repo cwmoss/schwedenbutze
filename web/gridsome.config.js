@@ -18,7 +18,8 @@ module.exports = {
     'Välkommen till Zorros Südhof',
 
   templates: {
-    SanityPost: '/:slug__current'
+    SanityPost: '/:slug__current',
+    SanityPage: '/:slug__current'
   },
 
   plugins: [
@@ -27,7 +28,7 @@ module.exports = {
       options: {
         ...clientConfig.sanity,
         typeName: 'Sanity',
-        token: process.env.SANITY_TOKEN,
+        //token: process.env.SANITY_TOKEN,
         overlayDrafts: !isProd,
         watchMode: !isProd
       }

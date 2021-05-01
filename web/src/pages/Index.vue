@@ -3,15 +3,10 @@
     <!-- Author intro -->
     <author-card :show-title="true" />
 
-    <!-- List posts -->
-    <div class="posts">
-      <post-card
-        v-for="edge in $page.posts.edges"
-        :key="edge.node.id"
-        :post="edge.node"
-        :metadata="$page.metadata"
-      />
-    </div>
+    <template slot="sidebar">
+      <navigation />
+    </template>
+
   </Layout>
 </template>
 
@@ -23,38 +18,23 @@
       dataset
     }
   }
-  posts: allSanityPost(sortBy: "publishedAt") {
-    edges {
-      node {
-        id
-        title
-        slug {
-          current
-        }
-        categories {
-          id
+  post: sanityPage (path: "/navigation") {
+    title
+    sections{
+      title
+      ref{
+        ... on SanityPost{
+        _type
+        _id
+        path
           title
-        }
-        publishedAt(format: "D. MMMM YYYY")
-        _rawExcerpt
-        mainImage {
-          asset {
-            _id
-            url
-          }
-          caption
-          alt
-          hotspot {
-            x
-            y
-            height
-            width
-          }
-          crop {
-            top
-            bottom
-            left
-            right
+          _rawBody(resolveReferences: {maxDepth: 5})
+          mainImage{
+            asset {
+              _id
+              url
+            }
+            caption
           }
         }
       }
@@ -67,11 +47,13 @@
 <script>
 import AuthorCard from '~/components/AuthorCard'
 import PostCard from '~/components/PostCard'
+import Navigation from '~/components/Navigation'
 
 export default {
   components: {
     AuthorCard,
-    PostCard
+    PostCard,
+    Navigation
   },
   metaInfo: {
     title: 'Välkommen till Zorros Südhof'
