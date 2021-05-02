@@ -1,11 +1,5 @@
 <template>
   <Layout :show-logo="false">
-    <!-- Author intro -->
-    <author-card :show-title="true" />
-
-    <template slot="sidebar">
-      <navigation />
-    </template>
 
   </Layout>
 </template>
