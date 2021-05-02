@@ -1,25 +1,24 @@
 <template>
     <!-- List sections -->
-    <div class="z-nav">
+    <div class="z-foot">
         <ul>
-            <li v-for="section in $static.navigation.sections" :key="section.ref._id">
+            <li v-for="section in $static.footerparts.sections" :key="section.ref._id">
                 <g-link :to="section.ref.path">
                 {{ section.title || section.ref.title }}
                 </g-link></li>
-            <li><g-link to="/booking">Buchung</g-link></li>
         </ul>
     </div>
 </template>
 
 <static-query>
-query Navigation {
+query Footer {
   metadata {
     sanityOptions {
       projectId
       dataset
     }
   }
-  navigation: sanityPage (path: "/navigation") {
+  footerparts: sanityPage (path: "/footer") {
     title
     sections{
       title
@@ -46,8 +45,7 @@ query Navigation {
 </static-query>
 
 <style lang="scss">
-.z-nav {
-
+.z-foot {
   ul {
     margin: 0;
     padding: 0;
@@ -62,8 +60,7 @@ query Navigation {
     display: block;
     padding: 6px 12px;
     text-decoration: none;
-    font-weight: 600;
-    color: var(--bg-color);
+    font-weight: bold;
   }
 }
 </style>

@@ -1,8 +1,6 @@
 <template>
   <Layout :show-logo="false">
 
-    <author-card :show-title="true" />
-
   <h1 class="post-title__text">{{ $page.post.title }}</h1>
 
   <div class="intro">

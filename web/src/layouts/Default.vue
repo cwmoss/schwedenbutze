@@ -19,10 +19,14 @@
     </main>
 
     <footer class="footer">
-      <span class="footer__copyright">Copyright © {{ new Date().getFullYear() }}.</span>
-      <span class="footer__links">
-        Powered by Zorro
-      </span>
+      <div class="footer__left">
+        Copyright © {{ new Date().getFullYear() }} - Powered by Zorro
+      </div>
+
+      <div class="footer__right">
+          <footer-parts />
+      </div>
+
     </footer>
   </div>
 </template>
@@ -31,6 +35,7 @@
 import HeaderLogo from '~/components/HeaderLogo'
 import ToggleTheme from '~/components/ToggleTheme'
 import Navigation from '~/components/Navigation'
+import FooterParts from '~/components/FooterParts'
 
 export default {
   props: {
@@ -42,7 +47,8 @@ export default {
   components: {
     HeaderLogo,
     ToggleTheme,
-    Navigation
+    Navigation,
+    FooterParts
   }
 }
 </script>
@@ -80,9 +86,9 @@ export default {
 .footer {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   padding: calc(var(--space) / 2);
-  text-align: center;
+  //text-align: center;
   font-size: 0.8em;
 
   > span {
@@ -91,6 +97,12 @@ export default {
 
   a {
     color: currentColor;
+  }
+
+  &__left,
+  &__right {
+    display: flex;
+    align-items: center;
   }
 }
 </style>
