@@ -27,20 +27,23 @@ const query = '*[_type == "reservation" && departure >= $now] {arrival, departur
 const params = {now: fnow}
 
 exports.handler = async function(event, context) {
-	
+
 	var rs
-	
+
 	return client.fetch(query, params)
 		.then(reservations => {
 			console.log("results")
+
 		  reservations.forEach(r => {
 		   		console.log(`reserved from ${r.arrival} to ${r.departure}`)
 		  	})
+      reservations = reservations.map(r => [r.arrival.replace(/-/g, "/"), r.departure.replace(/-/g, "/")])
+
 		return {
 	        statusCode: 200,
 	        body: JSON.stringify({rsrv: reservations})
 	    };
 	})
-	
-    
+
+
 }
