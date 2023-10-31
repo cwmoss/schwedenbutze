@@ -1,21 +1,18 @@
-import S from '@sanity/desk-tool/structure-builder'
-
 import { MdSettings } from 'react-icons/md'
 import { MdPerson } from 'react-icons/md'
-import { FaPencil } from "react-icons/fa"
+import { SlPencil } from 'react-icons/sl'
 
 import { HtmlPreview } from './htmlpreview'
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'siteSettings', 'reservation', 'documentation'].includes(listItem.getId())
+  !['category', 'author', 'post', 'siteSettings', 'reservation', 'documentation'].includes(
+    listItem.getId()
+  )
 
-
-
-export default () =>
+export default S =>
   S.list()
     .title('Content')
     .items([
-      
       S.listItem()
         .title('Inhalte')
         .schemaType('post')
@@ -25,27 +22,27 @@ export default () =>
         .title('Reservations')
         .child(
           S.list()
-          .title('Reservations')
-          .items([
-            S.listItem()
-            .title('Up next')
-            .child(
-              S.documentList()
-                .title('Upcoming Reservations')
-                .filter(`_type == "reservation" && arrival >= $from || departure >= $from`)
-                .params({from: new Date().toISOString()})
-            ),
-            S.listItem()
-            .title('Past')
-            .child(
-              S.documentList()
-                .title('Past Reservations')
-                .filter(`_type == "reservation" && departure < $today`)
-                .params({today: new Date().toISOString()})
-            ),
-            S.documentTypeListItem('reservation').title('All Reservations')
-          ])
-      ),
+            .title('Reservations')
+            .items([
+              S.listItem()
+                .title('Up next')
+                .child(
+                  S.documentList()
+                    .title('Upcoming Reservations')
+                    .filter(`_type == "reservation" && arrival >= $from || departure >= $from`)
+                    .params({ from: new Date().toISOString() })
+                ),
+              S.listItem()
+                .title('Past')
+                .child(
+                  S.documentList()
+                    .title('Past Reservations')
+                    .filter(`_type == "reservation" && departure < $today`)
+                    .params({ today: new Date().toISOString() })
+                ),
+              S.documentTypeListItem('reservation').title('All Reservations')
+            ])
+        ),
 
       S.listItem()
         .title('Authors')
@@ -59,13 +56,13 @@ export default () =>
         .child(S.documentTypeList('category').title('Categories')),
 
       S.listItem()
-        .title("Entwürfe")
-        .icon(FaPencil)
+        .title('Entwürfe')
+        .icon(SlPencil)
         .child(
           S.documentList()
-            .title("Entwürfe")
+            .title('Entwürfe')
             .filter("_id in path('drafts.**')")
-            .defaultOrdering([{ field: "_updatedAt", direction: "desc" }])
+            .defaultOrdering([{ field: '_updatedAt', direction: 'desc' }])
         ),
 
       S.listItem()
@@ -81,25 +78,16 @@ export default () =>
       S.listItem()
         .title('Doku')
         .child(
-
-        S.documentTypeList('documentation')
-        .defaultOrdering([{field: 'title', direction: 'asc'}])
-        .title('Doks')
-        .child(documentId =>
-          S.document()
-            .documentId(documentId)
-            .schemaType('documentation')
-            .views([
-              S.view
-                .component(HtmlPreview)
-                .title('Ansicht'),
-
-              S.view.form()
-              
-            ])
-          )
+          S.documentTypeList('documentation')
+            .defaultOrdering([{ field: 'title', direction: 'asc' }])
+            .title('Doks')
+            .child(documentId =>
+              S.document()
+                .documentId(documentId)
+                .schemaType('documentation')
+                .views([S.view.component(HtmlPreview).title('Ansicht'), S.view.form()])
+            )
         ),
-      
 
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
