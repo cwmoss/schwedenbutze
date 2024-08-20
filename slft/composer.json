@@ -1,0 +1,15 @@
+{
+  "name": "cwmoss/schwedenbutze",
+  "type": "project",
+  "version": "1.0",
+  "repositories": [
+    {
+      "type": "git",
+      "url": "https://github.com/cwmoss/slowfoot"
+    }
+  ],
+  "require": {
+    "cwmoss/slowfoot": "dev-main",
+    "sanity/sanity-php": "^1.5"
+  }
+}

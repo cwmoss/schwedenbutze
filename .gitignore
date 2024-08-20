@@ -12,3 +12,5 @@
 
 # Workspace
 /schwedenbutze.code-workspace
+*-export-*
+*.tgz
