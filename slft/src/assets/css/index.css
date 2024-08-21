@@ -296,6 +296,12 @@ pre[class*="language-"] {
 .space-bottom {
   margin-bottom: var(--space); }
 
+/*
+
+install sassc (or use vscode)
+=> sassc index.scss index.css
+
+*/
 .post-title {
   padding: calc(var(--space) / 2) 0 calc(var(--space) / 2);
   text-align: center; }
@@ -464,6 +470,38 @@ copy from layout.vue
   .footer__left, .footer__right {
     display: flex;
     align-items: center; }
+
+/*
+copy headerlogo
+*/
+.logo {
+  text-decoration: none;
+  color: var(--body-color) !important;
+  font-size: 0.9em; }
+  .logo__image {
+    vertical-align: middle;
+    border-radius: 99px;
+    height: 40px;
+    width: 40px;
+    margin-right: 0.5em; }
+
+/*
+copy navigation.vue
+*/
+.z-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.z-nav li {
+  float: left; }
+
+.z-nav a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--bg-color); }
 
 /*
 

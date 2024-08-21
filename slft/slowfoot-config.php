@@ -6,6 +6,8 @@ use slowfoot\image\configuration as img_config;
 use slowfoot\loader\json;
 use slowfoot\plugins\sanity;
 
+require_once("sanity_block_serializer.php");
+
 return new configuration(
   site_name: "Zorros Südhof",
   site_description: 'Välkommen till Zorros Südhof',
