@@ -1,4 +1,5 @@
 vendor/
 var/
+dist/
 .DS_Store
 composer.lock
