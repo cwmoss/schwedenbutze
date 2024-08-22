@@ -17,16 +17,15 @@ $title = $_context->config->site_name;
   <div id="app">
     <header class="header">
       <div class="header__left">
-        <a class="logo" href="/">
-          <span class="logo__text">&larr; <?= $title ?></span>
-        </a>
+        <? if (false) { ?>
+          <a class="logo" href="/">
+            <span class="logo__text">&larr; <?= $title ?></span>
+          </a>
+        <? } ?>
         <?= $partial("navigation") ?>
       </div>
 
-      <div class="header__right">
-
-        <toggle-theme />
-      </div>
+      <div class="header__right">:)</div>
     </header>
 
     <main class="main">
@@ -41,7 +40,7 @@ $title = $_context->config->site_name;
       </div>
 
       <div class="footer__right">
-        <footer-parts />
+        <?= $partial("footer") ?>
       </div>
 
     </footer>

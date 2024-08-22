@@ -13,13 +13,13 @@
     "dotenv": "^8.2.0",
     "gridsome": "^0.7.23",
     "gridsome-source-sanity": "^1.0.5",
-    "node-sass": "^4.14.1",
     "sanity-blocks-vue-component": "^0.1.0",
     "vue-functional-calendar": "^2.9.2",
     "vue2-daterange-picker": "^0.6.3",
     "vuelendar": "^1.0.15"
   },
   "devDependencies": {
-    "sass-loader": "^8.0.2"
+    "sass": "^1.77.8",
+    "sass-loader": "^10.5.2"
   }
 }

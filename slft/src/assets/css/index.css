@@ -504,6 +504,23 @@ copy navigation.vue
   color: var(--bg-color); }
 
 /*
+footer-parts
+*/
+.z-foot ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+.z-foot li {
+  float: left; }
+
+.z-foot a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-weight: bold; }
+
+/*
 
 copy from index.vue
 

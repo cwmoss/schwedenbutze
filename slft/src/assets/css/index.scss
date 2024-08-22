@@ -291,6 +291,27 @@ copy navigation.vue
   }
 }
 /*
+footer-parts
+*/
+.z-foot {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    float: left;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-weight: bold;
+  }
+}
+/*
 
 copy from index.vue
 

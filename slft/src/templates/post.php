@@ -1,10 +1,10 @@
 <?php
 layout("default");
-$img = $ref($page['mainImage']['asset']);
+$img = $ref($page['mainImage']['asset'] ?? "");
 ?>
 
 <div class="post-title">
-  <h1 class="post-title__text">post <?= $page["title"] ?></h1>
+  <h1 class="post-title__text"><?= $page["title"] ?></h1>
 
 </div>
 
