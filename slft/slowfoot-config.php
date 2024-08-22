@@ -25,8 +25,8 @@ return new configuration(
     download: true,
     profiles: [
       "main" => new profile(
-        size: "600x400",
-        mode: "fit"
+        size: "600x300",
+        mode: "fill"
       )
     ]
   )

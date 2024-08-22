@@ -1,11 +1,11 @@
-<page-query>
+<page-query first>
 
-  post(slug.current=="intro")
+  *(_type=="post" && slug.current=="intro")
 
 </page-query>
 <?php
 layout("default");
-$page = $page[0];
+// $page = $page[0];
 $img = $ref($page['mainImage']['asset']);
 ?>
 
