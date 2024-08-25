@@ -4,7 +4,7 @@ use slowfoot\configuration;
 use slowfoot\image\profile;
 use slowfoot\image\configuration as img_config;
 use slowfoot\loader\json;
-use slowfoot\plugins\sanity;
+use slowfoot_plugin\sanity;
 
 require_once("sanity_block_serializer.php");
 
@@ -16,10 +16,10 @@ return new configuration(
     // "page" => '/:slug.current'
   ],
   plugins: [
-    new sanity('emjk7lsc', use_cdn: true)
+    new sanity\sanity('emjk7lsc', use_cdn: true)
   ],
   sources: [
-    "sanity" => sanity::data_loader(...)
+    "sanity" => sanity\sanity::data_loader(...)
   ],
   assets: new img_config(
     download: true,
