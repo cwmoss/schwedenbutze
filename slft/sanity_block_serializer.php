@@ -2,6 +2,7 @@
 
 use slowfoot\hook;
 use slowfoot\image\processor;
+use slowfoot_plugin\sanity\sanity;
 
 hook::add_filter('sanity.block_serializers', function ($serializers, $opts, $ds, $config) {
   return [
@@ -36,14 +37,16 @@ hook::add_filter('sanity.block_serializers', function ($serializers, $opts, $ds,
     */
     'mainImage' => function ($item, $parent, $htmlBuilder) use ($ds, $config) {
       // print_r($item);
-      $asset = $ds->ref($item['attributes']['asset']);
+      // $asset = $ds->ref($item['attributes']['asset']);
+      // $assetfield = (object) $item['attributes'];
+      $assetfield = sanity::sanity_imagefield_to_slft((object) $item['attributes'], $ds);
       // alt + caption
       //dbg("+++ mainImage", $item['attributes'], $asset);
       // TODO: $config->get_image_processor()
       $processor = new processor($config->assets);
       $tag = sprintf(
         "<figure>%s<figcaption>%s</figcaption></figure>",
-        $processor->image_tag($asset, "600x", ["alt" => $item['attributes']['alt'] ?? ""]),
+        $processor->image_tag($assetfield, "600x", ["alt" => $item['attributes']['alt'] ?? ""]),
         $item['attributes']['caption'] ?? ""
       );
       return $tag;

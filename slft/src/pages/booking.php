@@ -1,12 +1,12 @@
 <page-query first>
 
-  *(_type=="post" && slug.current=="intro")
+  *(_type=="post" && slug.current=="booking-content")
 
 </page-query>
 <?php
 layout("default");
 // $page = $page[0];
-$img = $ref($page['mainImage'] ?? "");
+$img = $ref($page['mainImage']);
 ?>
 
 <div class="post-title">

@@ -1,7 +1,8 @@
 <?php
 $doc = $ref($section['ref']);
 $title = $section['title'] ?: ($doc['title'] ?: $doc['name']);
-$img = $ref($doc['mainImage']['asset']);
+// $img = $ref($doc['mainImage']['asset']);
+$img = $doc['mainImage'];
 #var_dump($img);
 ?>
 <article>

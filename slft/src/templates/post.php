@@ -1,6 +1,7 @@
 <?php
 layout("default");
-$img = $ref($page['mainImage']['asset'] ?? "");
+//$img = $ref($page['mainImage']['asset'] ?? "");
+$img = $page['mainImage'] ?? "";
 ?>
 
 <div class="post-title">
