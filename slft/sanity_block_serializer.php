@@ -9,13 +9,13 @@ hook::add_filter('sanity.block_serializers', function ($serializers, $opts, $ds,
     'marks' => [
       'link' => [
         'head' => function ($mark) use ($ds) {
-          return '<a href="' . sanity_link_url($mark, $ds) . '">';
+          return '<a href="' . sanity::sanity_link_url($mark, $ds) . '">';
         },
         'tail' => '</a>'
       ],
       'authorLink' => [
         'head' => function ($mark) use ($ds) {
-          return '<a href="' . sanity_link_url($mark, $ds) . '">';
+          return '<a href="' . sanity::sanity_link_url($mark, $ds) . '">';
         },
         'tail' => '</a>'
       ]
