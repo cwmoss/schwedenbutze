@@ -23,10 +23,10 @@ $title = $_context->config->site_name;
           </a>
         <? } ?>
         <?= $partial("navigation") ?>
-        <?= $partial("subnavigation", ["subnavigation"=>$navigation]) ?>
       </div>
 
       <div class="header__right">:)</div>
+      <?= $partial("subnavigation", ["subnavigation"=>$navigation]) ?>
     </header>
 
     <main class="main">
