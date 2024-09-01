@@ -6,7 +6,9 @@ export default {
     {
       type: 'post'
     },
-
+    {
+      type: 'page'
+    },
   ]
 
 }

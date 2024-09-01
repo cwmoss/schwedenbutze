@@ -9,11 +9,11 @@ use slowfoot_plugin\sanity;
 require_once("sanity_block_serializer.php");
 
 return new configuration(
-  site_name: "Zorros Südhof",
-  site_description: 'Välkommen till Zorros Südhof',
+  site_name: "Schwedenbutze",
+  site_description: 'Välkommen till Schwedenbutze',
   templates: [
     "post" => '/:slug.current',
-    // "page" => '/:slug.current'
+    "page" => '/:slug.current'
   ],
   plugins: [
     new sanity\sanity('emjk7lsc', use_cdn: true)

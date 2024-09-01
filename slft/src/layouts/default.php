@@ -23,6 +23,7 @@ $title = $_context->config->site_name;
           </a>
         <? } ?>
         <?= $partial("navigation") ?>
+        <?= $partial("subnavigation", ["subnavigation"=>$navigation]) ?>
       </div>
 
       <div class="header__right">:)</div>
@@ -36,7 +37,7 @@ $title = $_context->config->site_name;
 
     <footer class="footer">
       <div class="footer__left">
-        Copyright © 2024 - Powered by Zorro
+        Copyright © 2024
       </div>
 
       <div class="footer__right">

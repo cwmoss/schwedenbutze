@@ -290,6 +290,25 @@ copy navigation.vue
     color: var(--bg-color);
   }
 }
+.z-subnav {
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  li {
+    float: left;
+  }
+
+  a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--bg-color);
+  }
+}
 /*
 footer-parts
 */

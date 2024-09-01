@@ -50,6 +50,16 @@ export default {
       ]
     },
     {
+      name: 'page',
+      title: 'Page',
+      type: 'reference',
+      to: [
+        {
+          type: 'page'
+        }
+      ]
+    },
+    {
       name: 'categories',
       type: 'array',
       title: 'Categories',

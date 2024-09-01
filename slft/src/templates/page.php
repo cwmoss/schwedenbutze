@@ -3,7 +3,7 @@ layout("default");
 //$img = $ref($page['mainImage']['asset'] ?? "");
 $img = $page['mainImage'] ?? "";
 
-$navigation = $ref($page->page)["header"];
+$navigation = $page->header;
 ?>
 
 <div class="post-title">
@@ -26,3 +26,4 @@ $navigation = $ref($page->page)["header"];
     <post-tags :post="$page.post" v-if="$page.post" />
   </div>
 </div>
+

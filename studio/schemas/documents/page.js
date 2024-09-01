@@ -18,6 +18,21 @@ export default {
       }
     },
     {
+      title: "Header",
+      name: "header",
+      type: 'array',
+      of: [
+        {
+          type: "section",
+        }
+      ],
+      options:{
+        // sortable: false,
+         //editModal: 'popover'
+        // layout: 'grid'
+      }
+    },
+    {
       name: 'mainImage',
       title: 'Main image',
       type: 'image',
@@ -28,6 +43,21 @@ export default {
     {
       title: "Sections",
       name: "sections",
+      type: 'array',
+      of: [
+        {
+          type: "section",
+        }
+      ],
+      options:{
+        // sortable: false,
+         //editModal: 'popover'
+        // layout: 'grid'
+      }
+    },
+    {
+      title: "Footer",
+      name: "footer",
       type: 'array',
       of: [
         {
