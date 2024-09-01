@@ -203,6 +203,7 @@ copy from layout.vue
 
 .header {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
   min-height: var(--header-height);
@@ -298,8 +299,7 @@ copy navigation.vue
   }
 }
 .z-subnav {
-  margin-bottom: 0;
-  padding-bottom: 0;
+  width: 100%;
   ul {
     margin: 0;
     padding: 0;
