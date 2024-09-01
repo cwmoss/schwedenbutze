@@ -22,8 +22,10 @@ $title = $_context->config->site_name;
             <span class="logo__text">&larr; <?= $title ?></span>
           </a>
         <? } ?>
-        <?= $partial("navigation") ?>
-        <?= $partial("subnavigation", ["subnavigation"=>$navigation]) ?>
+        <div class="navigation">
+          <?= $partial("navigation") ?>
+          <?= $partial("subnavigation", ["subnavigation"=>$navigation]) ?>
+        </div>
       </div>
 
       <div class="header__right">:)</div>

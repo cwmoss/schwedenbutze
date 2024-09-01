@@ -271,7 +271,14 @@ copy headerlogo
 /*
 copy navigation.vue
 */
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 .z-nav {
+  margin-bottom: 0;
+  padding-bottom: 0;
   ul {
     margin: 0;
     padding: 0;
@@ -291,6 +298,8 @@ copy navigation.vue
   }
 }
 .z-subnav {
+  margin-bottom: 0;
+  padding-bottom: 0;
   ul {
     margin: 0;
     padding: 0;

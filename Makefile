@@ -7,3 +7,7 @@ build_static:
 deploy_static:
 	echo "Deploy static pages"
 	rsync -av slft/dist/ uoeh.de:/var/www/apps/schwedenbutze/static
+
+css:
+	echo "Building css"
+	cd slft/src/assets/css;sassc index.scss > index.css

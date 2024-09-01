@@ -61,7 +61,7 @@ body {
   --post-title-color: #000;
   --space: 3.5rem;
   --content-width: 860px;
-  --header-height: 80px;
+  --header-height: 60px;
   --radius: 5px; }
 
 @media screen and (max-width: 650px) {
@@ -488,35 +488,42 @@ copy headerlogo
 /*
 copy navigation.vue
 */
-.z-nav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
+.navigation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; }
 
-.z-nav li {
-  float: left; }
+.z-nav {
+  margin-bottom: 0;
+  padding-bottom: 0; }
+  .z-nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .z-nav li {
+    float: left; }
+  .z-nav a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--bg-color); }
 
-.z-nav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none;
-  font-weight: 600;
-  color: var(--bg-color); }
-
-.z-subnav ul {
-  margin: 0;
-  padding: 0;
-  list-style: none; }
-
-.z-subnav li {
-  float: left; }
-
-.z-subnav a {
-  display: block;
-  padding: 6px 12px;
-  text-decoration: none;
-  font-weight: 400;
-  color: var(--bg-color); }
+.z-subnav {
+  margin-bottom: 0;
+  padding-bottom: 0; }
+  .z-subnav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
+  .z-subnav li {
+    float: left; }
+  .z-subnav a {
+    display: block;
+    padding: 6px 12px;
+    text-decoration: none;
+    font-weight: 400;
+    color: var(--bg-color); }
 
 /*
 footer-parts
