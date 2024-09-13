@@ -282,6 +282,10 @@ copy navigation.vue
     margin: 0;
     padding: 0;
     list-style: none;
+
+    li {
+      margin-bottom: 0px;
+    }
   }
 
   li {
@@ -292,8 +296,12 @@ copy navigation.vue
     display: block;
     padding: 6px 12px;
     text-decoration: none;
-    font-weight: 600;
+    //font-weight: 600;
     color: var(--bg-color);
+  }
+
+  li.active {
+    font-weight: bold;
   }
 }
 .z-subnav {
@@ -306,13 +314,14 @@ copy navigation.vue
 
   li {
     float: left;
+    margin-bottom: 0px;
   }
 
   a {
     display: block;
     padding: 6px 12px;
     text-decoration: none;
-    font-weight: 400;
+    //font-weight: 400;
     color: var(--bg-color);
   }
 }

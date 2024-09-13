@@ -3,26 +3,17 @@ layout("default");
 //$img = $ref($page['mainImage']['asset'] ?? "");
 $img = $page['mainImage'] ?? "";
 
-$navigation = $ref($page->page)["header"];
 ?>
 
-<div class="post-title">
-  <h1 class="post-title__text"><?= $page["title"] ?></h1>
-
-</div>
-
-<div class="post content-box">
-  <div class="post__header">
-    <? if ($img) { ?>
-      <?= $image_tag($img, "main", ["noheight" => 1, "alt" => "main image of post"]) ?>
-    <? } ?>
-
-  </div>
-
-  <?= $sanity_text($page["body"]) ?>
-
-
-  <div class="post__footer">
-    <post-tags :post="$page.post" v-if="$page.post" />
-  </div>
-</div>
+<!-- Main -->
+<article id="main">
+  <header>
+    <h2><?= $page["title"] ?></h2>
+    <p><?= $sanity_text($page["excerpt"]) ?></p>
+  </header>
+  <section class="wrapper style5">
+    <div class="inner">
+      <?= $sanity_text($page["body"]) ?>
+    </div>
+  </section>
+</article>

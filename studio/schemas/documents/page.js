@@ -41,6 +41,18 @@ export default {
       }
     },
     {
+      name: 'excerpt',
+      type: 'excerptPortableText',
+      title: 'Excerpt',
+      description:
+        'Wird als Überschrift in der ersten Sektion auf der Hauptseite der Page angezeigt'
+    },
+    {
+      name: 'body',
+      type: 'bodyPortableText',
+      title: 'Body'
+    },
+    {
       title: "Sections",
       name: "sections",
       type: 'array',
