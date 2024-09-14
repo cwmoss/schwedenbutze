@@ -5,19 +5,22 @@ import { SlPencil } from 'react-icons/sl'
 import { HtmlPreview } from './htmlpreview'
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'siteSettings', 'reservation', 'documentation'].includes(
+  !['category', 'author', 'post', 'page', 'siteSettings', 'reservation', 'documentation'].includes(
     listItem.getId()
   )
 
 export default S =>
   S.list()
-    .title('Content')
+    .title('Inhalt')
     .items([
       S.listItem()
-        .title('Inhalte')
+        .title('Seiten')
+        .schemaType('page')
+        .child(S.documentTypeList('page').title('Seiten')),
+      S.listItem()
+        .title('Artikel')
         .schemaType('post')
-        .child(S.documentTypeList('post').title('Blog posts')),
-
+        .child(S.documentTypeList('post').title('Artikel')),
       S.listItem()
         .title('Reservations')
         .child(
@@ -45,15 +48,15 @@ export default S =>
         ),
 
       S.listItem()
-        .title('Authors')
+        .title('Autoren')
         .icon(MdPerson)
         .schemaType('author')
-        .child(S.documentTypeList('author').title('Authors')),
+        .child(S.documentTypeList('author').title('Autoren')),
 
       S.listItem()
-        .title('Categories')
+        .title('Kategorien')
         .schemaType('category')
-        .child(S.documentTypeList('category').title('Categories')),
+        .child(S.documentTypeList('category').title('Kategorien')),
 
       S.listItem()
         .title('Entwürfe')
@@ -66,7 +69,7 @@ export default S =>
         ),
 
       S.listItem()
-        .title('Settings')
+        .title('Einstellungen')
         .icon(MdSettings)
         .child(
           S.editor()
@@ -76,11 +79,11 @@ export default S =>
         ),
 
       S.listItem()
-        .title('Doku')
+        .title('Dokumentation')
         .child(
           S.documentTypeList('documentation')
             .defaultOrdering([{ field: 'title', direction: 'asc' }])
-            .title('Doks')
+            .title('Dokumentation')
             .child(documentId =>
               S.document()
                 .documentId(documentId)
