@@ -30,7 +30,7 @@ $background = $image_url($img, "main", ["noheight" => 1, "alt" => "main image of
       <p><?= $sanity_text($page["body"])?></p>
     </header>
     <ul class="icons major">
-      <li><span class="icon solid fa-spa major style1"><span class="label">Lorem</span></span></li>
+      <li><span class="icon solid fa-tree major style1"><span class="label">Lorem</span></span></li>
       <li><span class="icon solid fa-heart major style2"><span class="label">Ipsum</span></span></li>
       <li><span class="icon solid fa-umbrella-beach major style1"><span class="label">Dolor</span></span></li>
     </ul>

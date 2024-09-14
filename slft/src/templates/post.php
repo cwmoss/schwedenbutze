@@ -2,7 +2,7 @@
 layout("default");
 //$img = $ref($page['mainImage']['asset'] ?? "");
 $img = $page['mainImage'] ?? "";
-
+$background = $image_url($img, "main", ["noheight" => 1, "alt" => "main image of post"]);
 ?>
 
 <!-- Main -->
