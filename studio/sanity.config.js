@@ -9,6 +9,7 @@ import deskStructure from './deskStructure'
 import { netlifyWidget } from 'sanity-plugin-dashboard-widget-netlify'
 import { dashboardTool, projectUsersWidget, projectInfoWidget } from '@sanity/dashboard'
 import { documentListWidget } from 'sanity-plugin-dashboard-widget-document-list'
+import DeployWebsiteWidget from './plugins/deploy-website3'
 
 export default defineConfig({
   title: 'Schwedenbutze',
@@ -17,22 +18,16 @@ export default defineConfig({
   plugins: [
     dashboardTool({
       widgets: [
-        netlifyWidget({
-          title: 'Netlify deploys',
-          sites: [
-            {
-              buildHookId: '60350510667c531882f6f8a1',
-              title: 'Sanity Studio',
-              name: 'schwedenbutze-studio',
-              apiId: '7eed8d89-5e9d-473d-bb95-cb62672fa7cd'
+        DeployWebsiteWidget({
+          name: 'deploy-website',
+          layout: { height: 'auto' },
+          options: {
+            site: {
+              name: 'butzeserver',
+              url: process.env.SANITY_STUDIO_DEPLOY_WEBSITE,
+              token: process.env.SANITY_STUDIO_DEPLOY_TOKEN,
             },
-            {
-              buildHookId: '60350510b8b2f1125ed3c9db',
-              title: 'Blog Website',
-              name: 'schwedenbutze',
-              apiId: 'a9ad9239-4922-4146-b526-60c12b2823c7'
-            }
-          ]
+          },
         }),
         projectInfoWidget({
           data: [
@@ -45,11 +40,12 @@ export default defineConfig({
           ]
         }),
         projectUsersWidget(),
+        /*
         documentListWidget({
           title: 'Neueste Inhalte',
           order: '_createdAt desc',
           layout: { width: 'medium' }
-        })
+        })*/
       ]
     }),
 

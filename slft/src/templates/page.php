@@ -4,8 +4,8 @@ layout("default");
 $img = $page['mainImage'] ?? "";
 
 $navigation = $page->header;
-$slug = $page["slug"]["current"];
 $background = $image_url($img, "main", ["noheight" => 1, "alt" => "main image of post"]);
+$headerclass="alt"
 ?>
 
 <!-- Banner -->

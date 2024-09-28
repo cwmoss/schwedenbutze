@@ -6,8 +6,8 @@ $navigation = $query1('page(slug.current=="navigation")');
 debug_js("navigation", $navigation);
 
 ?>
-<header id="header" class="<?= $headerclass ?>">
-  <h1><a href="<?= $current['slug']['current'] ?>"><?= $current['title'] ?></a></h1>
+<header id="header">
+  <h1><a href="/">Home</a></h1>
   <nav id="nav">
     <ul>
       <li class="special">

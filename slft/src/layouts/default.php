@@ -23,7 +23,7 @@ $title = $_context->config->site_name;
 			<div id="page-wrapper" style="--bg-img: url(<?=$background?>)">
 
 				<!-- Header -->
-        <?= $partial("navigation", ["current"=>$slug]) ?>
+        <?= $partial("navigation", ["current"=>$current, "headerclass"=>$headerclass]) ?>
 
         <!-- Main Content -->
         <?= $content ?> <!-- Default slot -->
@@ -52,7 +52,10 @@ $title = $_context->config->site_name;
 							<li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 						</ul>
 						<ul class="copyright">
-							<li>&copy; 2024 Schwedenbutze</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							<li>&copy; 2024 Schwedenbutze</li>
+              <li>Content Lake: <a href="https://sanity.io">Sanity.io</a></li>
+              <li>Site Generator: <a href="https://github.com/cwmoss/slowfoot">slowfoot</a></li>
+              <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
 						</ul>
 					</footer>
 

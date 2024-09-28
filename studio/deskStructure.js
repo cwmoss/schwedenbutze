@@ -1,6 +1,6 @@
-import { MdSettings } from 'react-icons/md'
-import { MdPerson } from 'react-icons/md'
-import { SlPencil } from 'react-icons/sl'
+import { FaCat } from 'react-icons/fa'
+import { SlPencil, SlBookOpen, SlCalender, SlSettings, SlDoc, SlOrganization, SlFolderAlt } from 'react-icons/sl'
+import { FaBeer } from 'react-icons/fa'
 
 import { HtmlPreview } from './htmlpreview'
 
@@ -15,14 +15,17 @@ export default S =>
     .items([
       S.listItem()
         .title('Seiten')
+        .icon(SlFolderAlt)
         .schemaType('page')
         .child(S.documentTypeList('page').title('Seiten')),
       S.listItem()
         .title('Artikel')
+        .icon(SlDoc)
         .schemaType('post')
         .child(S.documentTypeList('post').title('Artikel')),
       S.listItem()
         .title('Reservations')
+        .icon(SlCalender)
         .child(
           S.list()
             .title('Reservations')
@@ -49,12 +52,13 @@ export default S =>
 
       S.listItem()
         .title('Autoren')
-        .icon(MdPerson)
+        .icon(FaCat)
         .schemaType('author')
         .child(S.documentTypeList('author').title('Autoren')),
 
       S.listItem()
         .title('Kategorien')
+        .icon(SlOrganization)
         .schemaType('category')
         .child(S.documentTypeList('category').title('Kategorien')),
 
@@ -70,7 +74,7 @@ export default S =>
 
       S.listItem()
         .title('Einstellungen')
-        .icon(MdSettings)
+        .icon(SlSettings)
         .child(
           S.editor()
             .id('siteSettings')
@@ -80,6 +84,7 @@ export default S =>
 
       S.listItem()
         .title('Dokumentation')
+        .icon(SlBookOpen)
         .child(
           S.documentTypeList('documentation')
             .defaultOrdering([{ field: 'title', direction: 'asc' }])
@@ -95,5 +100,5 @@ export default S =>
       // This returns an array of all the document types
       // defined in schema.js. We filter out those that we have
       // defined the structure above
-      ...S.documentTypeListItems().filter(hiddenDocTypes)
+      //...S.documentTypeListItems().filter(hiddenDocTypes)
     ])
