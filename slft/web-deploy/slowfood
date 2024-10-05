@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo "Access-Control-Allow-Origin: *"
+echo "Access-Control-Allow-Methods: POST, GET, OPTIONS"
+echo "Access-Control-Max-Age: 1000"
+echo "Access-Control-Allow-Credentials: true"
+echo "Access-Control-Allow-Headers: Content-Type, Authorization, Access-Control-Allow-Origin, x-slft-deploy"
+echo "Access-Control-Expose-Headers: Authorization"
+echo "Content-type: text/html"
+echo ""
+
+echo '<html>'
+echo '<head>'
+echo '<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">'
+echo '<title>sloofood cgi deploy</title>'
+echo '</head>'
+echo '<body>'
+echo 'Starting build'
+echo '<pre>'
+echo $HTTP_X_SLFT_DEPLOY
+realpath $SCRIPT_FILENAME
+#/usr/bin/env
+echo '</pre>'
+echo '</body>'
+echo '</html>'
+
+exit 0
