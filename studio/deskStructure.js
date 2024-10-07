@@ -11,18 +11,18 @@ const hiddenDocTypes = listItem =>
 
 export default S =>
   S.list()
-    .title('Inhalt')
+    .title('Content')
     .items([
       S.listItem()
-        .title('Seiten')
+        .title('Pages')
         .icon(SlFolderAlt)
         .schemaType('page')
-        .child(S.documentTypeList('page').title('Seiten')),
+        .child(S.documentTypeList('page').title('Pages')),
       S.listItem()
-        .title('Artikel')
+        .title('Articles')
         .icon(SlDoc)
         .schemaType('post')
-        .child(S.documentTypeList('post').title('Artikel')),
+        .child(S.documentTypeList('post').title('Articles')),
       S.listItem()
         .title('Reservations')
         .icon(SlCalender)
@@ -51,29 +51,29 @@ export default S =>
         ),
 
       S.listItem()
-        .title('Autoren')
+        .title('Authors')
         .icon(FaCat)
         .schemaType('author')
-        .child(S.documentTypeList('author').title('Autoren')),
+        .child(S.documentTypeList('author').title('Authors')),
 
       S.listItem()
-        .title('Kategorien')
+        .title('Categories')
         .icon(SlOrganization)
         .schemaType('category')
-        .child(S.documentTypeList('category').title('Kategorien')),
+        .child(S.documentTypeList('category').title('Categries')),
 
       S.listItem()
-        .title('Entwürfe')
+        .title('Drafts')
         .icon(SlPencil)
         .child(
           S.documentList()
-            .title('Entwürfe')
+            .title('Drafts')
             .filter("_id in path('drafts.**')")
             .defaultOrdering([{ field: '_updatedAt', direction: 'desc' }])
         ),
 
       S.listItem()
-        .title('Einstellungen')
+        .title('Settings')
         .icon(SlSettings)
         .child(
           S.editor()
@@ -83,17 +83,17 @@ export default S =>
         ),
 
       S.listItem()
-        .title('Dokumentation')
+        .title('Documentation')
         .icon(SlBookOpen)
         .child(
           S.documentTypeList('documentation')
             .defaultOrdering([{ field: 'title', direction: 'asc' }])
-            .title('Dokumentation')
+            .title('Documentation')
             .child(documentId =>
               S.document()
                 .documentId(documentId)
                 .schemaType('documentation')
-                .views([S.view.component(HtmlPreview).title('Ansicht'), S.view.form()])
+                .views([S.view.component(HtmlPreview).title('View'), S.view.form()])
             )
         ),
 
