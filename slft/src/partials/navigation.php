@@ -7,7 +7,7 @@ debug_js("navigation", $navigation);
 
 ?>
 <header id="header" class="<?= $headerclass ?>">
-  <h1><a href="<?= $current['slug']['current'] ?>"><?= $current['title'] ?></a></h1>
+  <h1><a href="/<?= $current['slug']['current'] ?>"><?= $current['title'] ?></a></h1>
   <nav id="nav">
     <ul>
       <li class="special">
