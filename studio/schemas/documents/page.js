@@ -53,6 +53,26 @@ export default {
       }
     },
     {
+      name: 'social_twitter',
+      title: 'Twitter',
+      type: 'string'
+    },
+    {
+      name: 'social_facebook',
+      title: 'Facebook',
+      type: 'string'
+    },
+    {
+      name: 'social_insta',
+      title: 'Instagram',
+      type: 'string'
+    },
+    {
+      name: 'social_email',
+      title: 'Email',
+      type: 'string'
+    },
+    {
       title: "Footer",
       name: "footer",
       type: 'array',

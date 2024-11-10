@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import { GrSettingsOption, GrTrigger } from "react-icons/gr";
+import { SlCloudUpload, SlSettings, SlRocket } from "react-icons/sl";
 // import PropTypes from "prop-types";
 // import getIt from "get-it";
 //import jsonResponse from "get-it/lib/middleware/jsonResponse";
@@ -107,7 +108,7 @@ function DeployWebsite(props) {
   };
 
   return (
-    <DashboardWidgetContainer header={'Seite aktualisieren'}>
+    <DashboardWidgetContainer header={'Update website'}>
       <Card padding={4}>
       
       <Text  className={styles.header}>
@@ -122,7 +123,7 @@ function DeployWebsite(props) {
             title="settings"
             padding={4}
           >
-            <GrSettingsOption />
+            <SlSettings />
           </Inline>
           {loading ? spin : null}
           </Inline>
@@ -138,7 +139,7 @@ function DeployWebsite(props) {
       )}
       <Box paddingY={2}>
         <Button bleed color="primary" kind="simple" onClick={do_deploy}>
-          <GrTrigger /> publish
+          <SlCloudUpload /> Publish to Server
         </Button>
         </Box>
 
