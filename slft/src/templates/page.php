@@ -35,9 +35,9 @@ $social = map_socials($page);
       <p><?= $sanity_text($page["body"])?></p>
     </header>
     <ul class="icons major">
-      <li><span class="icon solid fa-tree major style1"><span class="label">Lorem</span></span></li>
-      <li><span class="icon solid fa-heart major style2"><span class="label">Ipsum</span></span></li>
-      <li><span class="icon solid fa-umbrella-beach major style1"><span class="label">Dolor</span></span></li>
+      <li><span class="icon solid fa-tree major style1"><span class="label">Natur</span></span></li>
+      <li><span class="icon solid fa-heart major style2"><span class="label">Love</span></span></li>
+      <li><span class="icon solid fa-umbrella-beach major style1"><span class="label">Erholung</span></span></li>
     </ul>
   </div>
 </section>
@@ -65,35 +65,18 @@ $social = map_socials($page);
 <section id="three" class="wrapper style3 special">
   <div class="inner">
     <header class="major">
-      <h2>Accumsan mus tortor nunc aliquet</h2>
-      <p>Aliquam ut ex ut augue consectetur interdum. Donec amet imperdiet eleifend<br />
-      fringilla tincidunt. Nullam dui leo Aenean mi ligula, rhoncus ullamcorper.</p>
+      <h2><?= $page["infotitle"] ?></h2>
+      <p><?= $sanity_text($page["infoheadline"]) ?></p>
     </header>
     <ul class="features">
-      <li class="icon fa-paper-plane">
-        <h3>Arcu accumsan</h3>
-        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-      </li>
-      <li class="icon solid fa-laptop">
-        <h3>Ac Augue Eget</h3>
-        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-      </li>
-      <li class="icon solid fa-code">
-        <h3>Mus Scelerisque</h3>
-        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-      </li>
-      <li class="icon solid fa-headphones-alt">
-        <h3>Mauris Imperdiet</h3>
-        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-      </li>
-      <li class="icon fa-heart">
-        <h3>Aenean Primis</h3>
-        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-      </li>
-      <li class="icon fa-flag">
-        <h3>Tortor Ut</h3>
-        <p>Augue consectetur sed interdum imperdiet et ipsum. Mauris lorem tincidunt nullam amet leo Aenean ligula consequat consequat.</p>
-      </li>
+      <? foreach ($page["infoboxes"] as $infobox) {  
+        $info = $ref($infobox["ref"]["_ref"]);
+      ?>
+        <li class="icon solid <?= $info["icon"] ?>">
+          <h3><?= $infobox["title"] ?? $info["title"] ?></h3>
+          <p><?= $info["info"] ?></p>
+        </li>
+      <? } ?>
     </ul>
   </div>
 </section>

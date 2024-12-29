@@ -53,6 +53,31 @@ export default {
       }
     },
     {
+      name: 'infotitle',
+      title: 'Info title',
+      type: 'string'
+    },
+    {
+      name: 'infoheadline',
+      title: 'Info headline',
+      type: 'excerptPortableText'
+    },
+    {
+      title: "Info boxes",
+      name: "infoboxes",
+      type: 'array',
+      of: [
+        {
+          type: "infobox",
+        }
+      ],
+      options:{
+        // sortable: false,
+         //editModal: 'popover'
+        // layout: 'grid'
+      }
+    },
+    {
       name: 'social_twitter',
       title: 'Twitter',
       type: 'string'

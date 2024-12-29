@@ -3,6 +3,7 @@ import author from './documents/author'
 import category from './documents/category'
 import post from './documents/post'
 import page from './documents/page'
+import info from './documents/info'
 import reservation from './documents/reservation'
 import siteSettings from './documents/siteSettings'
 import documentation from './documents/documentation'
@@ -15,6 +16,8 @@ import mainImage from './objects/mainImage'
 import authorReference from './objects/authorReference'
 import section from './objects/section'
 import sectionlink from './objects/sectionlink'
+import infobox from './objects/infobox'
+import infoboxlink from './objects/infoboxlink'
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default [
@@ -23,6 +26,7 @@ export default [
   siteSettings,
   post,
   page,
+  info,
   documentation,
   reservation,
   category,
@@ -30,6 +34,8 @@ export default [
   mainImage,
   section,
   sectionlink,
+  infobox,
+  infoboxlink,
   authorReference,
   bodyPortableText,
   bioPortableText,

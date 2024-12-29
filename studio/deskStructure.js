@@ -1,11 +1,11 @@
 import { FaCat } from 'react-icons/fa'
-import { SlPencil, SlBookOpen, SlCalender, SlSettings, SlDoc, SlOrganization, SlFolderAlt } from 'react-icons/sl'
+import { SlPencil, SlBookOpen, SlInfo, SlCalender, SlSettings, SlDoc, SlOrganization, SlFolderAlt } from 'react-icons/sl'
 import { FaBeer } from 'react-icons/fa'
 
 import { HtmlPreview } from './htmlpreview'
 
 const hiddenDocTypes = listItem =>
-  !['category', 'author', 'post', 'page', 'siteSettings', 'reservation', 'documentation'].includes(
+  !['category', 'author', 'post', 'page', 'infobox', 'siteSettings', 'reservation', 'documentation'].includes(
     listItem.getId()
   )
 
@@ -23,6 +23,11 @@ export default S =>
         .icon(SlDoc)
         .schemaType('post')
         .child(S.documentTypeList('post').title('Articles')),
+      S.listItem()
+        .title('Infos')
+        .icon(SlInfo)
+        .schemaType('info')
+        .child(S.documentTypeList('info').title('Infos')),
       S.listItem()
         .title('Reservations')
         .icon(SlCalender)
