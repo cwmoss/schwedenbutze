@@ -1,9 +1,81 @@
-.auto_me {
-  opacity: 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 0;
-  width: 0;
-  z-index: -1;
+/* Schwedenbutze Custom CSS */
+
+/* Honeypot Spam-Schutz */
+.hp-field {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  position: absolute !important;
+  left: -9999px !important;
+}
+
+/* Quick Info Box */
+.house-quick-info {
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid #2e8ece;
+  padding: 0.8em 1.2em;
+  margin: 1em 0;
+  border-radius: 4px;
+  font-size: 0.95em;
+}
+
+/* Form Alert Boxes */
+.form-alert {
+  padding: 1em 1.5em;
+  border-radius: 6px;
+  margin-bottom: 1.5em;
+  display: none;
+  font-size: 0.95em;
+  line-height: 1.5;
+}
+.form-alert.success {
+  display: block;
+  background-color: rgba(46, 204, 113, 0.15);
+  border: 1px solid #2ecc71;
+  color: #2ecc71;
+}
+.form-alert.error {
+  display: block;
+  background-color: rgba(231, 76, 60, 0.15);
+  border: 1px solid #e74c3c;
+  color: #e74c3c;
+}
+
+/* Flatpickr Styling Anpassungen für Dark Theme */
+.flatpickr-calendar {
+  background: #2e3842;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  color: #fff;
+}
+.flatpickr-day {
+  color: rgba(255, 255, 255, 0.85);
+}
+.flatpickr-day.flatpickr-disabled,
+.flatpickr-day.flatpickr-disabled:hover {
+  color: rgba(255, 255, 255, 0.2);
+  background: rgba(231, 76, 60, 0.1);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+.flatpickr-day.selected,
+.flatpickr-day.startRange,
+.flatpickr-day.endRange {
+  background: #ed4933 !important;
+  border-color: #ed4933 !important;
+  color: #fff !important;
+}
+.flatpickr-day.inRange {
+  background: rgba(237, 73, 51, 0.25) !important;
+  border-color: transparent !important;
+  color: #fff !important;
+}
+.flatpickr-months .flatpickr-month,
+.flatpickr-current-month .flatpickr-monthDropdown-months,
+.flatpickr-current-month input.cur-year {
+  color: #fff;
+  fill: #fff;
+}
+span.flatpickr-weekday {
+  color: rgba(255, 255, 255, 0.6);
 }

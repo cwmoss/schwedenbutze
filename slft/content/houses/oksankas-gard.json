@@ -1,0 +1,33 @@
+{
+  "id": "oksankas-gard",
+  "title": "Oksankas Gård",
+  "slug": "oksankas-gard",
+  "active": true,
+  "landlord": {
+    "name": "Vermieter Oksankas Gård",
+    "email": "oksankas@schwedenbutze.de",
+    "phone": "+46 345 678901",
+    "notify_cc": "buchung@schwedenbutze.de"
+  },
+  "blocked_dates": [
+    {
+      "from": "2026-06-20",
+      "to": "2026-07-04",
+      "note": "Midsommar"
+    },
+    {
+      "from": "2026-07-18",
+      "to": "2026-08-08",
+      "note": "Sommer"
+    }
+  ],
+  "details": {
+    "max_guests": 8,
+    "bedrooms": 4,
+    "bathrooms": 2,
+    "min_stay_nights": 5,
+    "price_per_night_eur": 120,
+    "cleaning_fee_eur": 100
+  },
+  "teaser": "Welcome to a little paradise where everything still grows and thrives naturally"
+}

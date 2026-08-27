@@ -70,7 +70,7 @@ export default `
  * THEME
  * ============================================================*/
 .datepicker {
-  background-color: #fff;
+  background-color: #ccc;
   border-radius: 4px;
   box-shadow: 8px 8px 40px 5px rgba(0, 0, 0, 0.08);
   color: #000;
@@ -287,18 +287,19 @@ export default `
   transition-duration: 0.2s;
   transition-property: color, background-color, border-color;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  background-color: #3858e9;
+  background-color: #ed4933;
   border-radius: 2px;
   border: none;
   box-shadow: none;
   font-size: 10px;
   color: #ffffff;
   margin-top: 20px;
-  padding: 7px 13px;
+  padding: 0px 13px;
   text-decoration: none;
   text-shadow: none;
   text-transform: uppercase;
-}
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+} 
 
 .datepicker--topbar-top .datepicker__close-button, .datepicker--topbar-top
 .datepicker__clear-button, .datepicker--topbar-top
@@ -309,7 +310,7 @@ export default `
 .datepicker__close-button:hover,
 .datepicker__clear-button:hover,
 .datepicker__submit-button:hover {
-  background-color: #213fd4;
+  background-color: #ef5e4a;
   color: #ffffff;
 }
 

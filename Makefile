@@ -10,7 +10,7 @@ deploy_static:
 
 deploy_slft:
 	echo "Deploy slowfoot"
-	rsync -av --exclude 'dist' --exclude 'var' --exclude 'vendor' slft/ uoeh.de:/var/www/apps/slft
+	rsync -avv --exclude 'dist' --exclude 'var' --exclude 'vendor' slft/ uoeh.de:/var/www/apps/slft
 
 css:
 	echo "Building css"

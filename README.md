@@ -4,6 +4,10 @@ cd studio
 sanity dataset export production 17-09-2024.tgz
 tar xfz 17-09-2024.tgz
 
+Start slowhand dev server via
+
+`./vendor/bin/slowfoot dev -f`
+
 # Schwedenbutze
 
 _Fully customizable blog template with a Vue.js front-end._

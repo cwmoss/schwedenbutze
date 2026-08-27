@@ -1,5 +1,5 @@
-vendor/
-var/
-dist/
+/vendor/
+/var/
+/dist/
 .DS_Store
 composer.lock

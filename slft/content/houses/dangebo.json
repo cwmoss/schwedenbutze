@@ -1,0 +1,33 @@
+{
+  "id": "dangebo",
+  "title": "Dångebo",
+  "slug": "dangebo",
+  "active": true,
+  "landlord": {
+    "name": "Vermieter Dångebo",
+    "email": "dangebo@schwedenbutze.de",
+    "phone": "+46 123 456789",
+    "notify_cc": "buchung@schwedenbutze.de"
+  },
+  "blocked_dates": [
+    {
+      "from": "2026-07-04",
+      "to": "2026-07-18",
+      "note": "Sommerurlaub Fam. Schmidt"
+    },
+    {
+      "from": "2026-08-01",
+      "to": "2026-08-15",
+      "note": "Belegt"
+    }
+  ],
+  "details": {
+    "max_guests": 6,
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "min_stay_nights": 3,
+    "price_per_night_eur": 95,
+    "cleaning_fee_eur": 80
+  },
+  "teaser": "Willkommen in unserem idyllischen Ferienhaus in Småland!"
+}

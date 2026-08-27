@@ -104,14 +104,14 @@ export default class DateRange extends LitElement {
   async connectedCallback() {
     super.connectedCallback();
     this.input = this.querySelector("input");
-    let result = await fetch(this.fetchreserved);
+    let result = await fetch(this.fetchreserved, {
+      method: "POST",
+      headers: {
+        "x-api-key": "123456789",
+      },
+    });
     let data = await result.json();
-    this.reserved = [
-      ["2025-03-14", "2025-03-17"],
-      ["2025-03-19", "2025-03-21"],
-      ["2025-03-22", "2025-03-25"],
-      ["2025-03-25", "2025-03-28"],
-    ];
+    this.reserved = data;
     this.create_picker();
     //this.input = document.createElement("input");
   }

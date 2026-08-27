@@ -14,11 +14,12 @@ $title = $_context->config->site_name;
 <head>
   <title><?= $title ?></title>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
   <link rel="stylesheet" href="<?= path_asset('/css/main.css', true) ?>" />
+  <link rel="stylesheet" href="<?= path_asset('/vendor/flatpickr/flatpickr.min.css', true) ?>" />
   <link rel="stylesheet" href="<?= path_asset('/css/custom.css', true) ?>" />
-  <script type="module" src="<?= path_asset('/date-range/date-range.js', true) ?>"></script>
-  <script type="module" src="<?= path_asset('/js/app.js', true) ?>"></script>
+  <script src="<?= path_asset('/vendor/flatpickr/flatpickr.min.js', true) ?>"></script>
+  <script src="<?= path_asset('/vendor/flatpickr/de.js', true) ?>"></script>
+  <script src="<?= path_asset('/js/booking-calendar.js', true) ?>"></script>
   <noscript>
     <link rel="stylesheet" href="<?= path_asset('/css/noscript.css', true) ?>" />
   </noscript>

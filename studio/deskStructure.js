@@ -40,8 +40,8 @@ export default S =>
                 .child(
                   S.documentList()
                     .title('Upcoming Reservations')
-                    .filter(`_type == "reservation" && arrival >= $from || departure >= $from`)
-                    .params({ from: new Date().toISOString() })
+                    .filter(`_type == "reservation" && arrival >= $today || departure >= $today`)
+                    .params({ today: new Date().toISOString() })
                 ),
               S.listItem()
                 .title('Past')

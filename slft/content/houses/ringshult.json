@@ -1,0 +1,33 @@
+{
+  "id": "ringshult",
+  "title": "Ringshult",
+  "slug": "ringshult",
+  "active": true,
+  "landlord": {
+    "name": "Vermieter Ringshult",
+    "email": "ringshult@schwedenbutze.de",
+    "phone": "+46 234 567890",
+    "notify_cc": "buchung@schwedenbutze.de"
+  },
+  "blocked_dates": [
+    {
+      "from": "2026-07-11",
+      "to": "2026-07-25",
+      "note": "Belegt"
+    },
+    {
+      "from": "2026-09-05",
+      "to": "2026-09-19",
+      "note": "Herbstferien"
+    }
+  ],
+  "details": {
+    "max_guests": 4,
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "min_stay_nights": 4,
+    "price_per_night_eur": 85,
+    "cleaning_fee_eur": 70
+  },
+  "teaser": "Willkommen in unserem charmanten Ferienhaus in Småland! 🌿"
+}
