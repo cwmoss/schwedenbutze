@@ -137,8 +137,33 @@ try {
     exit;
 }
 
-// 7. Belegungs-Kollisionsprüfung (Sicherheitscheck gegen Doppelbuchung)
+require_once __DIR__ . '/../lib/ICalCache.php';
+
+// 7. Belegungs-Kollisionsprüfung (Sicherheitscheck gegen Doppelbuchung für manuelle & iCal-Termine)
 $blocked = $house_data['blocked_dates'] ?? [];
+
+$calendars = $house_data['calendars'] ?? [];
+$ical_urls = [];
+if (!empty($calendars['ical_url'])) {
+    $ical_urls[] = $calendars['ical_url'];
+}
+if (!empty($calendars['ical_urls']) && is_array($calendars['ical_urls'])) {
+    $ical_urls = array_merge($ical_urls, $calendars['ical_urls']);
+}
+
+if (!empty($ical_urls)) {
+    $ttl = $calendars['cache_ttl_seconds'] ?? 900;
+    $cache = new ICalCache(null, (int)$ttl);
+    $ical_events = $cache->getEvents($ical_urls);
+    foreach ($ical_events as $ev) {
+        $blocked[] = [
+            'from' => $ev['from'],
+            'to' => $ev['to'],
+            'note' => $ev['summary'] ?? 'iCal Belegung'
+        ];
+    }
+}
+
 foreach ($blocked as $b) {
     if (!empty($b['from']) && !empty($b['to'])) {
         $b_from = new DateTime($b['from']);
