@@ -20,6 +20,8 @@ if (isset($_SERVER['REQUEST_METHOD']) && $_SERVER['REQUEST_METHOD'] === 'OPTIONS
     exit;
 }
 
+require_once __DIR__ . '/../lib/ICalCache.php';
+
 $houses_dir = __DIR__ . '/../content/houses';
 
 if (!function_exists('expand_date_range')) {
@@ -45,7 +47,7 @@ if (!function_exists('expand_date_range')) {
 
 if (!function_exists('get_house_availability')) {
     /**
-     * Lädt und formatiert die Verfügbarkeit eines einzelnen Hauses.
+     * Lädt und formatiert die Verfügbarkeit eines einzelnen Hauses (kombiniert manuelle Sperren & iCal).
      */
     function get_house_availability(string $file): ?array {
         if (!file_exists($file)) {
@@ -58,9 +60,36 @@ if (!function_exists('get_house_availability')) {
             return null;
         }
 
+        // 1. Manuell konfigurierte Zeiträume
         $ranges = $data['blocked_dates'] ?? [];
-        $disabled_dates = [];
 
+        // 2. Dynamische iCal / Google-Kalender Feeds auslesen
+        $calendars = $data['calendars'] ?? [];
+        $ical_urls = [];
+        if (!empty($calendars['ical_url'])) {
+            $ical_urls[] = $calendars['ical_url'];
+        }
+        if (!empty($calendars['ical_urls']) && is_array($calendars['ical_urls'])) {
+            $ical_urls = array_merge($ical_urls, $calendars['ical_urls']);
+        }
+
+        if (!empty($ical_urls)) {
+            $ttl = $calendars['cache_ttl_seconds'] ?? 900;
+            $cache = new ICalCache(null, (int)$ttl);
+            $ical_events = $cache->getEvents($ical_urls);
+            
+            foreach ($ical_events as $ev) {
+                $ranges[] = [
+                    'from' => $ev['from'],
+                    'to' => $ev['to'],
+                    'note' => $ev['summary'] ?? 'iCal Belegung',
+                    'source' => 'ical'
+                ];
+            }
+        }
+
+        // 3. Alle Zeiträume in Einzeltage expandieren
+        $disabled_dates = [];
         foreach ($ranges as $range) {
             if (!empty($range['from']) && !empty($range['to'])) {
                 $expanded = expand_date_range($range['from'], $range['to']);
