@@ -18,24 +18,30 @@
   border-radius: 4px;
   font-size: 0.95em;
 }
+.house-quick-info:empty,
+#house_info_box:empty,
+#nights_display:empty {
+  display: none !important;
+}
 
 /* Form Alert Boxes */
 .form-alert {
+  display: none;
   padding: 1em 1.5em;
   border-radius: 6px;
   margin-bottom: 1.5em;
-  display: none;
   font-size: 0.95em;
   line-height: 1.5;
 }
+.form-alert:empty {
+  display: none !important;
+}
 .form-alert.success {
-  display: block;
   background-color: rgba(46, 204, 113, 0.15);
   border: 1px solid #2ecc71;
   color: #2ecc71;
 }
 .form-alert.error {
-  display: block;
   background-color: rgba(231, 76, 60, 0.15);
   border: 1px solid #e74c3c;
   color: #e74c3c;

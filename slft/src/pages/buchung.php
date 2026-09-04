@@ -25,8 +25,8 @@ $selected_house = $_GET['house'] ?? ($houses[0]['id'] ?? 'dangebo');
   <section class="wrapper style5">
     <div class="inner">
 
-      <div id="form-alert-success" class="form-alert success"></div>
-      <div id="form-alert-error" class="form-alert error"></div>
+      <div id="form-alert-success" class="form-alert success" style="display: none;"></div>
+      <div id="form-alert-error" class="form-alert error" style="display: none;"></div>
 
       <form id="booking-inquiry-form" method="post" action="/api/send-inquiry.php">
         <div class="row gtr-uniform">
