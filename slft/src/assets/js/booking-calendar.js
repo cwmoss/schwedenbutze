@@ -25,13 +25,24 @@ class BookingCalendar {
   async init() {
     this.initFlatpickr();
 
+    // URL-Parameter auslesen (z. B. ?house=ringshult)
+    const urlParams = new URLSearchParams(window.location.search);
+    const houseFromUrl = urlParams.get('house');
+
     if (this.houseSelect) {
+      if (houseFromUrl) {
+        const optionExists = Array.from(this.houseSelect.options).some(opt => opt.value === houseFromUrl);
+        if (optionExists) {
+          this.houseSelect.value = houseFromUrl;
+        }
+      }
+
       this.houseSelect.addEventListener('change', (e) => {
         this.loadAvailability(e.target.value);
       });
       await this.loadAvailability(this.houseSelect.value || this.defaultHouse);
     } else if (this.defaultHouse) {
-      await this.loadAvailability(this.defaultHouse);
+      await this.loadAvailability(houseFromUrl || this.defaultHouse);
     }
   }
 

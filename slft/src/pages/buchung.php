@@ -1,4 +1,5 @@
 <?php
+$is_booking = true;
 layout("default");
 
 // Lade alle konfigurierten Häuser

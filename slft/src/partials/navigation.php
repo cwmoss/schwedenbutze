@@ -21,6 +21,9 @@ debug_js("navigation", $navigation);
                 <a href="<?= $path($section["ref"]["_ref"]) ?>"><?= $section["title"] ?? $page["title"] ?></a>
               </li>
             <? } ?>
+            <li>
+                <a href="/buchung"><strong>Buchen &amp; Verfügbarkeit</strong></a>
+            </li>
           </ul>
         </div>
       </li>

@@ -36,19 +36,49 @@ $title = $_context->config->site_name;
     <!-- Main Content -->
     <?= $content ?> <!-- Default slot -->
 
+<?php
+// Kontext & aktives Haus für CTA ermitteln
+$curr_path = strtolower(trim($_context->path ?? ($_context->name ?? ''), '/'));
+
+$house_slug = '';
+$house_title = '';
+if (str_starts_with($curr_path, 'dangebo')) {
+    $house_slug = 'dangebo';
+    $house_title = 'Dångebo';
+} elseif (str_starts_with($curr_path, 'ringshult')) {
+    $house_slug = 'ringshult';
+    $house_title = 'Ringshult';
+} elseif (str_starts_with($curr_path, 'oksankas')) {
+    $house_slug = 'oksankas-gard';
+    $house_title = 'Oksankas Gård';
+}
+
+$booking_url = $house_slug ? "/buchung?house={$house_slug}" : "/buchung";
+$is_booking_page = !empty($is_booking) || ($curr_path === 'buchung') || str_ends_with($curr_path, 'buchung');
+?>
+
+    <?php if (!$is_booking_page): ?>
     <!-- CTA -->
     <section id="cta" class="wrapper style4">
       <div class="inner">
         <header>
           <h2>Willst Du eine entspannte Zeit in Schweden verbringen?</h2>
-          <p>Dann schaue doch gleich nach der Verfügbarkeit eines der Häuser!</p>
+          <p>
+            <?= $house_title 
+                ? "Prüfe jetzt die Verfügbarkeit für <strong>" . htmlspecialchars($house_title) . "</strong> und sichere dir deinen Wunschurlaub!" 
+                : "Dann schaue doch gleich nach der Verfügbarkeit unserer Ferienhäuser!" ?>
+          </p>
         </header>
         <ul class="actions stacked">
-          <li><a href="#" class="button fit primary">Buchen</a></li>
-          <li><a href="#" class="button fit">Learn More</a></li>
+          <li>
+            <a href="<?= htmlspecialchars($booking_url) ?>" class="button fit primary">
+              <?= $house_title ? htmlspecialchars($house_title) . " jetzt buchen" : "Jetzt buchen" ?>
+            </a>
+          </li>
         </ul>
       </div>
     </section>
+    <?php endif; ?>
 
     <!-- Footer -->
     <?= $partial("footer", ["social" => $social]) ?>
