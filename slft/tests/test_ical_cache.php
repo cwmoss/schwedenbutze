@@ -10,7 +10,7 @@ if (is_dir($test_cache_dir)) {
     array_map('unlink', glob($test_cache_dir . '/*'));
 }
 
-$fixture_file = __DIR__ . '/fixtures/sample_google_calendar.ics';
+$fixture_file = __DIR__ . '/fixtures/cache_test.ics';
 if (!is_dir(dirname($fixture_file))) {
     mkdir(dirname($fixture_file), 0777, true);
 }

@@ -9,6 +9,9 @@
     "phone": "+46 345 678901",
     "notify_cc": "buchung@schwedenbutze.de"
   },
+  "calendars": {
+    "ical_url": ""
+  },
   "blocked_dates": [
     {
       "from": "2026-06-20",

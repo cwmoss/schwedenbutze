@@ -10,12 +10,12 @@
 
 | Task | Titel | Status | Ziel & Test-Kriterium |
 | :--- | :--- | :--- | :--- |
-| **Task 1** | Standalone iCal Parser (`lib/ICalParser.php`) | ⏳ Bereit | Liest `.ics`-Dateien und extrahiert Start-/Enddaten ganztägiger und zeitbasierter Events. *Test: RFC 5545 Parsing-Test.* |
-| **Task 2** | Caching-Layer (`lib/ICalCache.php`) | ⏳ Bereit | Speichert gecachte JSON-Termine mit konfigurierbarem TTL (z. B. 15 Min) und Stale-Fallback bei Offline-Google. *Test: Cache-Hit & TTL-Validierung.* |
-| **Task 3** | Integration in `api/availability.php` | ⏳ Bereit | Führt manuelle `blocked_dates` und dynamische `ical_url` Termine zu einer einheitlichen Sperrliste zusammen. *Test: JSON-Response enthält beide Quellen.* |
-| **Task 4** | Integration in `api/send-inquiry.php` | ⏳ Bereit | Verhindert Buchungsanfragen für Termine, die im Google-Kalender belegt sind. *Test: 409-Kollision bei iCal-Termin.* |
-| **Task 5** | Test-Suite mit echten iCal-Fixtures | ⏳ Bereit | End-to-End Test mit realistischen Google-Kalender `.ics` Datensätzen. *Test: `php slft/tests/test_ical_sync.php`.* |
-| **Task 6** | Vermieter-Leitfaden & Konfigurations-Update | ⏳ Bereit | Dokumentation und Hinterlegung von Test-Kalender-Links in den Hausdateien. *Test: Doku-Review.* |
+| **Task 1** | Standalone iCal Parser (`lib/ICalParser.php`) | ✅ Abgeschlossen | Liest `.ics`-Dateien und extrahiert Start-/Enddaten ganztägiger und zeitbasierter Events. *Test: RFC 5545 Parsing-Test.* |
+| **Task 2** | Caching-Layer (`lib/ICalCache.php`) | ✅ Abgeschlossen | Speichert gecachte JSON-Termine mit konfigurierbarem TTL (z. B. 15 Min) und Stale-Fallback bei Offline-Google. *Test: Cache-Hit & TTL-Validierung.* |
+| **Task 3** | Integration in `api/availability.php` | ✅ Abgeschlossen | Führt manuelle `blocked_dates` und dynamische `ical_url` Termine zu einer einheitlichen Sperrliste zusammen. *Test: JSON-Response enthält beide Quellen.* |
+| **Task 4** | Integration in `api/send-inquiry.php` | ✅ Abgeschlossen | Verhindert Buchungsanfragen für Termine, die im Google-Kalender belegt sind. *Test: 409-Kollision bei iCal-Termin.* |
+| **Task 5** | Test-Suite mit echten iCal-Fixtures | ✅ Abgeschlossen | End-to-End Test mit realistischen Google-Kalender `.ics` Datensätzen. *Test: `php slft/tests/test_ical_sync.php`.* |
+| **Task 6** | Vermieter-Leitfaden & Konfigurations-Update | ✅ Abgeschlossen | Dokumentation und Hinterlegung von Test-Kalender-Links in den Hausdateien. *Test: Doku-Review.* |
 
 ---
 
