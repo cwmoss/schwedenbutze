@@ -1,5 +1,9 @@
 all: build_static deploy_static
 
+dev:
+	@echo "Starte lokalen Server auf http://localhost:8000 ..."
+	php -S localhost:8000 slft/router.php
+
 build_static:
 	echo "Build static page"
 	cd slft;./vendor/bin/slowfoot build -f
