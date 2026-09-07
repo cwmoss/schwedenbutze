@@ -85,3 +85,66 @@
 span.flatpickr-weekday {
   color: rgba(255, 255, 255, 0.6);
 }
+/* Button Styling & Text-Overflow Fixes */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+button,
+.button {
+  max-width: 100%;
+  white-space: normal;
+  height: auto;
+  min-height: 3.125em;
+  line-height: 1.4;
+  padding: 0.85em 1.75em;
+  letter-spacing: 0.12em;
+  text-overflow: clip;
+  overflow: visible;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  word-break: normal;
+}
+
+input[type="submit"].fit,
+input[type="reset"].fit,
+input[type="button"].fit,
+button.fit,
+.button.fit {
+  width: 100%;
+  display: flex;
+}
+
+/* CTA Layout Optimierung */
+#cta .inner {
+  max-width: 65em;
+  align-items: center;
+}
+
+#cta .inner header {
+  width: 58%;
+  padding-right: 2em;
+}
+
+#cta .inner .actions {
+  width: 42%;
+  min-width: 260px;
+}
+
+@media screen and (max-width: 980px) {
+  #cta .inner {
+    display: block;
+    text-align: center;
+  }
+  #cta .inner header {
+    width: 100%;
+    padding-right: 0;
+    margin-bottom: 2em;
+  }
+  #cta .inner .actions {
+    width: 100%;
+    max-width: 28em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
