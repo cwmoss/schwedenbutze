@@ -1,7 +1,7 @@
 # Requirements: iCal / Google-Kalender Synchronisation (REQ-02)
 
 - **Dokument-ID:** REQ-02
-- **Status:** Entwurf & Bereit zur Umsetzung
+- **Status:** ✅ Umgesetzt ([Tasks](./02-tasks-ical-sync.md))
 - **Bezug:** Ergänzung zu [REQ-01: Buchungssystem & Multi-Vermieter-Architektur](./01-architektur-buchung-vermieter.md)
 
 ---
@@ -100,6 +100,8 @@ Beim Absenden einer Buchungsanfrage (`api/send-inquiry.php`) prüft das Backend 
 ---
 
 ## 5. Anleitung für Vermieter: Google-Kalender-Link abrufen
+
+*(Eine druckfreundliche, eigenständige Version dieser Anleitung steht unter [vermieter-anleitung-google-kalender.md](./vermieter-anleitung-google-kalender.md) zur Verfügung.)*
 
 Hier ist die einfache Schritt-für-Schritt-Anleitung, wie ein Vermieter den Link aus seinem Google-Konto erhält:
 

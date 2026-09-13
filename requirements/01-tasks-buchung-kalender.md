@@ -22,35 +22,35 @@
 ## Details zu den einzelnen Tasks
 
 ### Task 1: Konfigurationsdateien & Datenmodell anlegen
-- [ ] Verzeichnis `slft/content/houses/` erstellen.
-- [ ] `dangebo.json` anlegen (Vermieterdaten, Belegungszeiten, Details).
-- [ ] `ringshult.json` anlegen.
-- [ ] `oksankas-gard.json` anlegen.
-- [ ] Test-Skript zur Validierung der JSON/YAML-Dateien erstellen und ausführen.
+- [x] Verzeichnis `slft/content/houses/` erstellen.
+- [x] `dangebo.json` anlegen (Vermieterdaten, Belegungszeiten, Details).
+- [x] `ringshult.json` anlegen.
+- [x] `oksankas-gard.json` anlegen.
+- [x] Test-Skript zur Validierung der JSON/YAML-Dateien erstellen und ausführen.
 
 ### Task 2: Verfügbarkeits-Endpunkt
-- [ ] `slft/api/availability.php` erstellen (Standalone, ohne Sanity-Abhängigkeit).
-- [ ] Logik zur Auflösung von Datumsbereichen (`from` -> `to`) in Einzeltage (`YYYY-MM-DD`).
-- [ ] CORS-Header & JSON-Response.
-- [ ] Test mit `curl` und verschiedenen Haus-IDs.
+- [x] `slft/api/availability.php` erstellen (Standalone, ohne Sanity-Abhängigkeit).
+- [x] Logik zur Auflösung von Datumsbereichen (`from` -> `to`) in Einzeltage (`YYYY-MM-DD`).
+- [x] CORS-Header & JSON-Response.
+- [x] Test mit `curl` und verschiedenen Haus-IDs.
 
 ### Task 3: Belegungskalender-Frontend (Flatpickr)
-- [ ] Flatpickr CSS & JS in `slft/src/assets/` einbinden.
-- [ ] JavaScript-Modul erstellen: Lädt belegte Tage via API und initialisiert Flatpickr im `range`-Modus.
-- [ ] Visuelle Tests im Browser (Styling passend zum Spectral-Theme).
+- [x] Flatpickr CSS & JS in `slft/src/assets/` einbinden.
+- [x] JavaScript-Modul erstellen: Lädt belegte Tage via API und initialisiert Flatpickr im `range`-Modus.
+- [x] Visuelle Tests im Browser (Styling passend zum Spectral-Theme).
 
 ### Task 4: Buchungsanfrage-Formular & UI
-- [ ] Formular-Markup mit Hausauswahl, Zeitraum, Name, E-Mail, Telefon, Gäste, Nachricht.
-- [ ] Unsichtbares Honeypot-Feld (`website_url`) zur Spamerkennung.
-- [ ] Clientseitige Validierung.
+- [x] Formular-Markup mit Hausauswahl, Zeitraum, Name, E-Mail, Telefon, Gäste, Nachricht.
+- [x] Unsichtbares Honeypot-Feld (`website_url`) zur Spamerkennung.
+- [x] Clientseitige Validierung.
 
 ### Task 5: E-Mail-Routing & Dispatcher
-- [ ] `slft/api/send-inquiry.php` erstellen.
-- [ ] Honeypot-Prüfung & Server-Validierung.
-- [ ] E-Mail an jeweiligen Vermieter generieren (inkl. `Reply-To: $guest_email`).
-- [ ] Eingangsbestätigung an Gast generieren.
-- [ ] Testdurchlauf mit Mock- bzw. Test-E-Mails.
+- [x] `slft/api/send-inquiry.php` erstellen.
+- [x] Honeypot-Prüfung & Server-Validierung.
+- [x] E-Mail an jeweiligen Vermieter generieren (inkl. `Reply-To: $guest_email`).
+- [x] Eingangsbestätigung an Gast generieren.
+- [x] Testdurchlauf mit Mock- bzw. Test-E-Mails.
 
 ### Task 6: End-to-End Integration
-- [ ] Einbindung in `slft/src/pages/buchung.php` bzw. Haus-Templates.
-- [ ] Test des Gesamtablaufs im Browser.
+- [x] Einbindung in `slft/src/pages/buchung.php` bzw. Haus-Templates.
+- [x] Test des Gesamtablaufs im Browser.

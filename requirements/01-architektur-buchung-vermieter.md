@@ -1,7 +1,7 @@
 # REQ-01: Multi-Vermieter-Konfiguration, Belegungskalender & Buchungsanfrage
 
 - **Dokument-ID:** REQ-01
-- **Status:** Spezifiziert / Bereit zur Implementierung
+- **Status:** ✅ Umgesetzt ([Tasks](./01-tasks-buchung-kalender.md))
 - **Zielversion:** Phase 1
 
 ---
@@ -40,7 +40,7 @@ Die Plattform **Schwedenbutze** ([schwedenbutze.de](https://schwedenbutze.de)) p
 
 ## 3. Datenmodell & Konfigurationsschema
 
-Jedes Haus wird als eigenständige Datei (z. B. `content/houses/{slug}.yaml` oder `.md`) angelegt.
+Jedes Haus wird als eigenständige Datei (im Projekt als `slft/content/houses/{slug}.json` umgesetzt, alternativ auch YAML/Frontmatter möglich) angelegt.
 
 ### Beispiel-Schema:
 
@@ -135,6 +135,7 @@ gallery:
 
 ## 6. Phasenplan & Nächste Schritte
 
-1. **Phase 1 (dieses Dokument):** Konfigurationsstruktur anlegen, Kalender-Integration mit Flatpickr und PHP-Mail-Dispatcher implementieren.
-2. **Phase 2 ([REQ-02](./02-web-admin-content-pflege.md)):** Browserbasiertes Admin-Panel (z. B. Sveltia CMS oder schlankes PHP-Web-Admin) für Vermieter zur Pflege von Texten, Bildern und Belegungszeiten ohne lokalen Rechner.
-3. **Phase 3 ([REQ-03](./03-legacy-cleanup.md)):** Vollständige Bereinigung der Altlasten (Sanity Studio, alte Gridsome-Dateien, veraltete Abhängigkeiten).
+1. **Phase 1 (dieses Dokument – REQ-01):** Konfigurationsstruktur anlegen, Kalender-Integration mit Flatpickr und PHP-Mail-Dispatcher implementieren (✅ Umgesetzt, siehe [Tasks](./01-tasks-buchung-kalender.md)).
+2. **Phase 2 ([REQ-02: iCal / Google-Kalender Synchronisation](./02-ical-google-calendar-sync.md)):** Automatische Synchronisation mit Google Kalender & iCal Feeds der Vermieter (✅ Umgesetzt, siehe [Tasks](./02-tasks-ical-sync.md)).
+3. **Phase 3 (REQ-03):** Browserbasiertes Admin-Panel (z. B. Sveltia CMS oder schlankes Flat-File/PHP-Web-Admin) für Vermieter zur Pflege von Texten, Bildern und Belegungszeiten (⏳ Geplant).
+4. **Phase 4 (REQ-04):** Sanity-Ablösung, Gridsome-Entfernung, vereinfachter CI/CD- und Server-Workflow (⏳ Geplant).

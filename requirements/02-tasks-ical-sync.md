@@ -22,31 +22,31 @@
 ## Detaillierte Umsetzungsschritte
 
 ### Task 1: Standalone iCal-Parser (`slft/lib/ICalParser.php`)
-- [ ] Klasse `ICalParser` anlegen (ohne externe Composer-Dependencies).
-- [ ] Parsen von `BEGIN:VEVENT` bis `END:VEVENT`.
-- [ ] Erkennung von `DTSTART;VALUE=DATE:YYYYMMDD` vs. `DTSTART:YYYYMMDDTHHMMSSZ`.
-- [ ] Erkennung von `DTEND` (exklusives Enddatum) vs. `DTSTART + DURATION`.
-- [ ] Ignorieren von `STATUS:CANCELLED`.
-- [ ] Normalisierung zu einem sauberen PHP-Array von Belegungen: `[ ['from' => 'YYYY-MM-DD', 'to' => 'YYYY-MM-DD', 'summary' => '...'], ... ]`.
+- [x] Klasse `ICalParser` anlegen (ohne externe Composer-Dependencies).
+- [x] Parsen von `BEGIN:VEVENT` bis `END:VEVENT`.
+- [x] Erkennung von `DTSTART;VALUE=DATE:YYYYMMDD` vs. `DTSTART:YYYYMMDDTHHMMSSZ`.
+- [x] Erkennung von `DTEND` (exklusives Enddatum) vs. `DTSTART + DURATION`.
+- [x] Ignorieren von `STATUS:CANCELLED`.
+- [x] Normalisierung zu einem sauberen PHP-Array von Belegungen: `[ ['from' => 'YYYY-MM-DD', 'to' => 'YYYY-MM-DD', 'summary' => '...'], ... ]`.
 
 ### Task 2: Caching-Layer (`slft/lib/ICalCache.php`)
-- [ ] Automatisches Anlegen von `slft/var/cache/ical/`.
-- [ ] Prüfung des Datei-Alters (`filemtime`). Wenn älter als TTL (z. B. 900s), Abruf via `curl` / `file_get_contents` mit kurzem Timeout (max. 3 Sekunden).
-- [ ] Bei Netzwerk-Fehler oder Google-Ausfall: Fallback auf bestehenden Cache-Stand, kein Seitenausfall.
+- [x] Automatisches Anlegen von `slft/var/cache/ical/`.
+- [x] Prüfung des Datei-Alters (`filemtime`). Wenn älter als TTL (z. B. 900s), Abruf via `curl` / `file_get_contents` mit kurzem Timeout (max. 3 Sekunden).
+- [x] Bei Netzwerk-Fehler oder Google-Ausfall: Fallback auf bestehenden Cache-Stand, kein Seitenausfall.
 
 ### Task 3: Integration in `slft/api/availability.php`
-- [ ] Einlesen von `calendars.ical_url` aus `content/houses/{house}.json`.
-- [ ] Kombination aus manuellen `blocked_dates` + iCal-Events.
-- [ ] Entfernen von Duplikaten und Sortierung der `disabled_dates`.
+- [x] Einlesen von `calendars.ical_url` aus `content/houses/{house}.json`.
+- [x] Kombination aus manuellen `blocked_dates` + iCal-Events.
+- [x] Entfernen von Duplikaten und Sortierung der `disabled_dates`.
 
 ### Task 4: Kollisionsprüfung in `slft/api/send-inquiry.php`
-- [ ] Vor dem E-Mail-Versand Abgleich der Wunschdaten gegen manuelle und iCal-Belegungen.
-- [ ] Bei Überschneidung: HTTP 409 Conflict mit verständlicher Fehlermeldung.
+- [x] Vor dem E-Mail-Versand Abgleich der Wunschdaten gegen manuelle und iCal-Belegungen.
+- [x] Bei Überschneidung: HTTP 409 Conflict mit verständlicher Fehlermeldung.
 
 ### Task 5: Umfassende Tests
-- [ ] Erstellen einer Fixture-Datei `slft/tests/fixtures/sample_google_calendar.ics`.
-- [ ] Automatisierter Test `slft/tests/test_ical_sync.php`.
+- [x] Erstellen einer Fixture-Datei `slft/tests/fixtures/sample_google_calendar.ics`.
+- [x] Automatisierter Test `slft/tests/test_ical_sync.php`.
 
 ### Task 6: Konfiguration & Dokumentation
-- [ ] Aktualisierung von `requirements/README.md`.
-- [ ] Bereitstellung der Vermieter-Anleitung als handliche PDF/Markdown-Referenz.
+- [x] Aktualisierung von `requirements/README.md`.
+- [x] Bereitstellung der Vermieter-Anleitung als handliche PDF/Markdown-Referenz ([vermieter-anleitung-google-kalender.md](./vermieter-anleitung-google-kalender.md)).
