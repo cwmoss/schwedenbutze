@@ -11,7 +11,7 @@
 | Task | Titel | Status | Beschreibung |
 | :--- | :--- | :--- | :--- |
 | **Task 1** | Flat-File Struktur & Migration | ✅ Erledigt | Anlegen von `content/houses/{slug}/` (JSON, Markdown-Unterseiten, Bilder) & Migration aus Sanity-DB; Rückwärtskompatibilität in APIs |
-| **Task 2** | Authentifizierung & Rollensystem | ⏳ Bereit | Login, Session-Management, Argon2id/Bcrypt Passwort-Hashing, CSRF-Schutz & Rollen (Vermieter vs. Super-Admin) |
+| **Task 2** | Authentifizierung & Rollensystem | ✅ Erledigt | Login, Session-Management, Argon2id/Bcrypt Passwort-Hashing, CSRF-Schutz & Rollen (Vermieter vs. Super-Admin) |
 | **Task 3** | Backend-APIs (Haus & Unterseiten) | ⏳ Bereit | JSON/REST-Endpunkte für Stammdaten, Preise, iCal, Sperren und Unterseiten-CRUD |
 | **Task 4** | Medien- & Bildupload-Handler | ⏳ Bereit | Drag & Drop Upload, MIME-Type-Prüfung, Web-Optimierung & lokale Galerie |
 | **Task 5** | Admin-Weboberfläche (Dashboard & Editor) | ⏳ Bereit | Responsive Single-Page-UI mit Tabs für Stammdaten, Kalender, Hauptseite, Unterseiten-Editor (Markdown + Vorschau) & Galerie |
@@ -29,11 +29,11 @@
 - [x] Ausführung und Verifikation aller bestehenden Tests (`slft/tests/*.php`).
 
 ### Task 2: Authentifizierung & Rollensystem (`slft/admin/auth.php`)
-- [ ] Erstellen von `slft/var/admin_auth.json` (außerhalb des Web-Roots) mit sicheren Passwort-Hashes (`password_hash()`) für die 3 Vermieter und den Super-Admin.
-- [ ] Session-Manager mit `HttpOnly`-, `SameSite=Strict`- und `Secure`-Cookies.
-- [ ] Login- und Logout-Controller mit Brute-Force-Schutz (Rate-Limiting).
-- [ ] CSRF-Token Generierung und Middleware für alle POST/PUT/DELETE Anfragen.
-- [ ] Berechtigungsprüfung: Vermieter hat ausschließlich Schreib- und Leserechte auf sein eigenes Hausverzeichnis (`content/houses/{slug}/`).
+- [x] Erstellen von `slft/var/admin_auth.json` (außerhalb des Web-Roots) mit sicheren Passwort-Hashes (`password_hash()`) für die 3 Vermieter und den Super-Admin.
+- [x] Session-Manager mit `HttpOnly`-, `SameSite=Strict`- und `Secure`-Cookies.
+- [x] Login- und Logout-Controller mit Brute-Force-Schutz (Rate-Limiting).
+- [x] CSRF-Token Generierung und Middleware für alle POST/PUT/DELETE Anfragen.
+- [x] Berechtigungsprüfung: Vermieter hat ausschließlich Schreib- und Leserechte auf sein eigenes Hausverzeichnis (`content/houses/{slug}/`).
 
 ### Task 3: Backend-APIs (`slft/admin/api/`)
 - [ ] `slft/admin/api/house.php`:

@@ -9,9 +9,13 @@ $uri = urldecode(parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH));
 $base_dir = __DIR__;
 $dist_dir = $base_dir . '/dist';
 
-// 1. API-Aufrufe direkt an das PHP-Skript in /api/ leiten
-if (strpos($uri, '/api/') === 0) {
-    $script = $base_dir . $uri;
+// 1. API-Aufrufe und Admin-Bereich direkt an das jeweilige PHP-Skript leiten
+if (strpos($uri, '/api/') === 0 || strpos($uri, '/admin') === 0) {
+    $clean_uri = ($uri === '/admin') ? '/admin/index.php' : $uri;
+    $script = $base_dir . $clean_uri;
+    if (is_dir($script)) {
+        $script = rtrim($script, '/') . '/index.php';
+    }
     if (file_exists($script) && is_file($script)) {
         require $script;
         return;
