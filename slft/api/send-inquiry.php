@@ -100,7 +100,10 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 
 // 5. Haus-Konfiguration laden
 $safe_house = preg_replace('/[^a-zA-Z0-9_-]/', '', $house_id);
-$house_file = $houses_dir . '/' . $safe_house . '.json';
+$house_file = $houses_dir . '/' . $safe_house . '/house.json';
+if (!file_exists($house_file)) {
+    $house_file = $houses_dir . '/' . $safe_house . '.json';
+}
 
 if (!file_exists($house_file)) {
     http_response_code(404);

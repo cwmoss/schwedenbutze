@@ -10,7 +10,7 @@
 
 | Task | Titel | Status | Beschreibung |
 | :--- | :--- | :--- | :--- |
-| **Task 1** | Flat-File Struktur & Migration | ⏳ Bereit | Anlegen von `content/houses/{slug}/` (JSON, Markdown-Unterseiten, Bilder) & Migration aus Sanity-DB; Rückwärtskompatibilität in APIs |
+| **Task 1** | Flat-File Struktur & Migration | ✅ Erledigt | Anlegen von `content/houses/{slug}/` (JSON, Markdown-Unterseiten, Bilder) & Migration aus Sanity-DB; Rückwärtskompatibilität in APIs |
 | **Task 2** | Authentifizierung & Rollensystem | ⏳ Bereit | Login, Session-Management, Argon2id/Bcrypt Passwort-Hashing, CSRF-Schutz & Rollen (Vermieter vs. Super-Admin) |
 | **Task 3** | Backend-APIs (Haus & Unterseiten) | ⏳ Bereit | JSON/REST-Endpunkte für Stammdaten, Preise, iCal, Sperren und Unterseiten-CRUD |
 | **Task 4** | Medien- & Bildupload-Handler | ⏳ Bereit | Drag & Drop Upload, MIME-Type-Prüfung, Web-Optimierung & lokale Galerie |
@@ -23,10 +23,10 @@
 ## Detaillierte Umsetzungsschritte
 
 ### Task 1: Flat-File Struktur & Datenmigration
-- [ ] Modulare Verzeichnisstruktur `slft/content/houses/{slug}/` anlegen (`house.json`, `subpages/`, `images/`).
-- [ ] Migrationsskript erstellen, das bestehende Unterseiten (`post`) und Haus-Hauptseiten (`page`) aus `slft/var/slowfoot.db` und den bisherigen JSONs in saubere Markdown-Dateien und `house.json` überführt.
-- [ ] Bestehende APIs ([`slft/api/availability.php`](file:///Users/uo/dev/schwedenbutze/slft/api/availability.php) & [`slft/api/send-inquiry.php`](file:///Users/uo/dev/schwedenbutze/slft/api/send-inquiry.php)) so aktualisieren, dass sie transparent sowohl `content/houses/{slug}/house.json` als auch `content/houses/{slug}.json` unterstützen.
-- [ ] Ausführung und Verifikation aller bestehenden Tests (`slft/tests/*.php`).
+- [x] Modulare Verzeichnisstruktur `slft/content/houses/{slug}/` anlegen (`house.json`, `subpages/`, `images/`).
+- [x] Migrationsskript erstellen, das bestehende Unterseiten (`post`) und Haus-Hauptseiten (`page`) aus `slft/var/slowfoot.db` und den bisherigen JSONs in saubere Markdown-Dateien und `house.json` überführt.
+- [x] Bestehende APIs ([`slft/api/availability.php`](file:///Users/uo/dev/schwedenbutze/slft/api/availability.php) & [`slft/api/send-inquiry.php`](file:///Users/uo/dev/schwedenbutze/slft/api/send-inquiry.php)) so aktualisieren, dass sie transparent sowohl `content/houses/{slug}/house.json` als auch `content/houses/{slug}.json` unterstützen.
+- [x] Ausführung und Verifikation aller bestehenden Tests (`slft/tests/*.php`).
 
 ### Task 2: Authentifizierung & Rollensystem (`slft/admin/auth.php`)
 - [ ] Erstellen von `slft/var/admin_auth.json` (außerhalb des Web-Roots) mit sicheren Passwort-Hashes (`password_hash()`) für die 3 Vermieter und den Super-Admin.

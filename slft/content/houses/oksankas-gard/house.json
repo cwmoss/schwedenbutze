@@ -1,0 +1,79 @@
+{
+    "id": "oksankas-gard",
+    "title": "Oksankas Gård",
+    "slug": "oksankas-gard",
+    "active": true,
+    "landlord": {
+        "name": "Vermieter Oksankas Gård",
+        "email": "oksankas@schwedenbutze.de",
+        "phone": "+46 345 678901",
+        "notify_cc": "buchung@schwedenbutze.de"
+    },
+    "calendars": {
+        "ical_url": ""
+    },
+    "blocked_dates": [
+        {
+            "from": "2026-06-20",
+            "to": "2026-07-04",
+            "note": "Midsommar"
+        },
+        {
+            "from": "2026-07-18",
+            "to": "2026-08-08",
+            "note": "Sommer"
+        }
+    ],
+    "details": {
+        "max_guests": 8,
+        "bedrooms": 4,
+        "bathrooms": 2,
+        "min_stay_nights": 5,
+        "price_per_night_eur": 120,
+        "cleaning_fee_eur": 100
+    },
+    "teaser": "Welcome to a little paradise where everything still grows and thrives naturally",
+    "hero": {
+        "image": "IMG_8177.jpeg",
+        "teaser": "Welcome to a little paradise where everything still grows and thrives naturally",
+        "body_markdown": "**A paradise on earth**\n\nOksanka`s garden is a tiny handmade paradise on the Earth where you can enjoy peace and quiet in the middle of the forest. It is located in Törnamåla,15 (Tingsryd kommun, Sweden) in the southern part of the country. You can find there a lot of lakes and hiking trails nearby like Stanford.\n\n**Everything here is organic**\n\nWe grow and sell organic vegetables, strawberries and flowers. In the garden there are chickens, a dog and cats. Chicken eggs are available to buy for your organic meal. Wonderful, fragrant chemical-free strawberries you can buy throughout the summer and early autumn.\n\nAs Oksanka`s garden is in the forest it is possible to order and buy wild blueberries, raspberries and lingonberries in season or some jam all year round.\n\nComplete your vacation with quality and natural ecological food from Oksanka`s garden."
+    },
+    "infotitle": "Discover the Magic of Our Farm",
+    "infoheadline": "Join us for an unforgettable experience where nature, sustainability, and community come together. Our eco-friendly farm offers a tranquil escape and a chance to connect with the land and local traditions.",
+    "infoboxes": [
+        {
+            "icon": "fa-leaf",
+            "title": "Organic Produce",
+            "text": "Enjoy fresh, sustainably grown fruits and vegetables straight from our farm to your table."
+        },
+        {
+            "icon": "fa-heart",
+            "title": "Happy Chickens",
+            "text": "Meet our free-range chickens and enjoy the freshest, most delicious eggs."
+        },
+        {
+            "icon": "fa-home",
+            "title": "Future Tiny Houses",
+            "text": "Stay tuned for our charming tiny houses, perfect for a peaceful eco-retreat."
+        },
+        {
+            "icon": "fa-tree",
+            "title": "Scenic Beauty",
+            "text": "Immerse yourself in the stunning natural surroundings of Småland's forests and lakes."
+        },
+        {
+            "icon": "fa-handshake",
+            "title": "Local Experience",
+            "text": "Connect with local culture and traditions while supporting eco-friendly practices."
+        },
+        {
+            "icon": "fa-shopping-basket ",
+            "title": "Community Market",
+            "text": "Shop for fresh produce and artisanal goods, supporting local farmers and craftsmen."
+        }
+    ],
+    "sections_order": [
+        "strawberries",
+        "our-sustainable-farm-in-smaland"
+    ]
+}

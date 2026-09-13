@@ -117,13 +117,31 @@ $house_param = isset($_GET['house']) ? trim($_GET['house']) : '';
 // 1. Wenn house=all oder leer: Liste aller Häuser zurückgeben
 if ($house_param === 'all' || $house_param === '') {
     $result = [];
-    $files = glob($houses_dir . '/*.json');
-    foreach ($files as $file) {
+    $found_ids = [];
+    
+    // Zuerst modulare Verzeichnisse: content/houses/*/house.json
+    $modular_files = glob($houses_dir . '/*/house.json') ?: [];
+    foreach ($modular_files as $file) {
         $house_data = get_house_availability($file);
         if ($house_data) {
             $result[$house_data['id']] = $house_data;
+            $found_ids[$house_data['id']] = true;
         }
     }
+    
+    // Dann klassische Einzelfiles: content/houses/*.json (falls nicht bereits als Ordner vorhanden)
+    $legacy_files = glob($houses_dir . '/*.json') ?: [];
+    foreach ($legacy_files as $file) {
+        $id = basename($file, '.json');
+        if (!isset($found_ids[$id])) {
+            $house_data = get_house_availability($file);
+            if ($house_data) {
+                $result[$house_data['id']] = $house_data;
+                $found_ids[$house_data['id']] = true;
+            }
+        }
+    }
+    
     echo json_encode([
         'success' => true,
         'houses' => $result
@@ -134,7 +152,10 @@ if ($house_param === 'all' || $house_param === '') {
 // 2. Spezifisches Haus anfragen
 // Sanitize input to prevent path traversal
 $safe_house = preg_replace('/[^a-zA-Z0-9_-]/', '', $house_param);
-$target_file = $houses_dir . '/' . $safe_house . '.json';
+$target_file = $houses_dir . '/' . $safe_house . '/house.json';
+if (!file_exists($target_file)) {
+    $target_file = $houses_dir . '/' . $safe_house . '.json';
+}
 
 $house_data = get_house_availability($target_file);
 

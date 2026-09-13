@@ -1,0 +1,81 @@
+{
+    "id": "dangebo",
+    "title": "Dångebo",
+    "slug": "dangebo",
+    "active": true,
+    "landlord": {
+        "name": "Vermieter Dångebo",
+        "email": "dangebo@schwedenbutze.de",
+        "phone": "+46 123 456789",
+        "notify_cc": "buchung@schwedenbutze.de"
+    },
+    "calendars": {
+        "ical_url": ""
+    },
+    "blocked_dates": [
+        {
+            "from": "2026-07-04",
+            "to": "2026-07-18",
+            "note": "Sommerurlaub Fam. Schmidt"
+        },
+        {
+            "from": "2026-08-01",
+            "to": "2026-08-15",
+            "note": "Belegt"
+        }
+    ],
+    "details": {
+        "max_guests": 6,
+        "bedrooms": 3,
+        "bathrooms": 1,
+        "min_stay_nights": 3,
+        "price_per_night_eur": 95,
+        "cleaning_fee_eur": 80
+    },
+    "teaser": "Willkommen in unserem idyllischen Ferienhaus in Småland!",
+    "hero": {
+        "image": "IMG_7837.jpeg",
+        "teaser": "Willkommen in unserem idyllischen Ferienhaus in Småland!",
+        "body_markdown": "**Ihr Traumurlaub am See und in der Nähe des Flusses**\n\nUnser größeres Ferienhaus befindet sich in einem malerischen kleinen Ort am wunderschönen See Sandsjön. Ob zu Fuß oder mit dem Fahrrad, der See ist in wenigen Minuten bequem erreichbar. Hier können Sie entspannte Tage am Wasser verbringen und zauberhafte Sonnenuntergänge genießen.\n\n**Abenteuer und Entspannung in der Natur**\n\nDas Ferienhaus liegt nahe dem Fluss Ronnebyån, ein wahres Paradies für Angler. Die umliegenden Wälder laden zu ausgedehnten Spaziergängen und Wanderungen ein. Ein kleiner Rundweg von etwa 45 Minuten bietet die perfekte Gelegenheit, die Natur in all ihrer Pracht zu erkunden.\n\n**Wellness pur**\n\nAm Haus erwartet Sie eine traditionelle Holzsauna, in der Sie nach einem ereignisreichen Tag herrlich entspannen können. Lassen Sie den Tag in der wohligen Wärme ausklingen und gönnen Sie sich eine Auszeit vom Alltag.\n\n**Ihr Rückzugsort**\n\nUnser Ferienhaus ist der ideale Ort, um dem Stress des Alltags zu entfliehen und neue Energie zu tanken. Wir freuen uns darauf, Ihnen einen unvergesslichen Aufenthalt zu bieten.\n\nHerzlich willkommen!"
+    },
+    "infotitle": "Willkommen in Ihrem Ferienparadies",
+    "infoheadline": "Entdecken Sie die Highlights unseres gemütlichen Ferienhauses in Småland und freuen Sie sich auf unvergessliche Erlebnisse inmitten wunderschöner Natur. Hier finden Sie alles, was Sie für einen erholsamen und abwechslungsreichen Aufenthalt benötigen:",
+    "infoboxes": [
+        {
+            "icon": "fa-sun",
+            "title": "Idyllische Sonnenuntergänge",
+            "text": "Genießen Sie atemberaubende Sonnenuntergänge am See Sandsjön."
+        },
+        {
+            "icon": "fa-hiking",
+            "title": "Angeln & Wandern",
+            "text": "Perfekte Bedingungen zum Angeln im Fluss Ronnebyån und Wandern in den umliegenden Wäldern."
+        },
+        {
+            "icon": "fa-home",
+            "title": "Geräumiges Ferienhaus",
+            "text": "Ein liebevoll renoviertes, größeres Ferienhaus mit allem Komfort."
+        },
+        {
+            "icon": "fa-hot-tub",
+            "title": "Holzsauna",
+            "text": "Entspannen Sie sich in unserer traditionellen Holzsauna nach einem aktiven Tag."
+        },
+        {
+            "icon": "fa-water",
+            "title": "Nahe am See",
+            "text": "Nur wenige Minuten zu Fuß oder mit dem Fahrrad zum malerischen See Sandsjön."
+        },
+        {
+            "icon": "fa-star",
+            "title": "Gästebewertungen",
+            "text": "Lesen Sie die begeisterten Erfahrungsberichte unserer bisherigen Gäste."
+        }
+    ],
+    "sections_order": [
+        "hausgebrauch",
+        "haus",
+        "sauna",
+        "umgebung"
+    ]
+}

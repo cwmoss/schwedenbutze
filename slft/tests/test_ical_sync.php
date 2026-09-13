@@ -10,7 +10,7 @@ echo "🔍 Starte End-to-End Integrationstests für Google-Kalender / iCal Sync.
 
 $fixture_path = realpath(__DIR__ . '/fixtures/sample_google_calendar.ics');
 $houses_dir = __DIR__ . '/../content/houses';
-$dangebo_file = $houses_dir . '/dangebo.json';
+$dangebo_file = file_exists($houses_dir . '/dangebo/house.json') ? $houses_dir . '/dangebo/house.json' : $houses_dir . '/dangebo.json';
 $original_dangebo_json = file_get_contents($dangebo_file);
 
 // 1. Dångebo temporär mit dem iCal Test-Feed ausstatten
