@@ -12,7 +12,7 @@
 | :--- | :--- | :--- | :--- |
 | **Task 1** | Flat-File Struktur & Migration | ✅ Erledigt | Anlegen von `content/houses/{slug}/` (JSON, Markdown-Unterseiten, Bilder) & Migration aus Sanity-DB; Rückwärtskompatibilität in APIs |
 | **Task 2** | Authentifizierung & Rollensystem | ✅ Erledigt | Login, Session-Management, Argon2id/Bcrypt Passwort-Hashing, CSRF-Schutz & Rollen (Vermieter vs. Super-Admin) |
-| **Task 3** | Backend-APIs (Haus & Unterseiten) | ⏳ Bereit | JSON/REST-Endpunkte für Stammdaten, Preise, iCal, Sperren und Unterseiten-CRUD |
+| **Task 3** | Backend-APIs (Haus & Unterseiten) | ✅ Erledigt | JSON/REST-Endpunkte für Stammdaten, Preise, iCal, Sperren und Unterseiten-CRUD |
 | **Task 4** | Medien- & Bildupload-Handler | ⏳ Bereit | Drag & Drop Upload, MIME-Type-Prüfung, Web-Optimierung & lokale Galerie |
 | **Task 5** | Admin-Weboberfläche (Dashboard & Editor) | ⏳ Bereit | Responsive Single-Page-UI mit Tabs für Stammdaten, Kalender, Hauptseite, Unterseiten-Editor (Markdown + Vorschau) & Galerie |
 | **Task 6** | Slowfoot-Integration & Build-Trigger | ⏳ Bereit | Flat-File-Loader in `slowfoot-config.php`, Re-Build-Endpunkt `/admin/api/build.php` |
@@ -36,14 +36,16 @@
 - [x] Berechtigungsprüfung: Vermieter hat ausschließlich Schreib- und Leserechte auf sein eigenes Hausverzeichnis (`content/houses/{slug}/`).
 
 ### Task 3: Backend-APIs (`slft/admin/api/`)
-- [ ] `slft/admin/api/house.php`:
-  - `GET`: Liefert Stammdaten, Preise, Kontaktdaten, Hauptseiten-Texte und Infoboxen des Hauses.
-  - `POST`: Validiert und speichert Änderungen in `house.json`.
-- [ ] `slft/admin/api/subpages.php`:
-  - `GET`: Liste aller Unterseiten des Hauses (inkl. Metadaten aus dem Frontmatter).
-  - `POST`: Anlegen einer neuen Unterseite oder Aktualisieren einer bestehenden (`subpages/{slug}.md`).
-  - `DELETE`: Sicheres Löschen einer Unterseite.
-- [ ] `slft/admin/api/calendar.php`:
+- [x] `slft/admin/api/house.php`:
+  - `GET ?house={slug}`: Liefert `house.json` des Hauses (inkl. Details, iCal, Sperren, Hero, Infoboxen).
+  - `PUT / POST`: Speichert Änderungen in `house.json` (Validierung von Datentypen, Mindestaufenthalt, E-Mail-Format, iCal-URL).
+- [x] `slft/admin/api/subpages.php`:
+  - `GET ?house={slug}`: Liste aller Unterseiten (`short_slug`, `slug`, `title`, `show_on_frontpage`, `date`).
+  - `GET ?house={slug}&page={short_slug}`: Liefert Metadaten + Markdown-Body einer Unterseite.
+  - `POST ?house={slug}`: Neue Unterseite anlegen (Erzeugt `{short_slug}.md`).
+  - `PUT ?house={slug}&page={short_slug}`: Bestehende Unterseite bearbeiten (Speichert Frontmatter + Markdown-Body).
+  - `DELETE ?house={slug}&page={short_slug}`: Unterseite löschen.
+- [x] `slft/admin/api/calendar.php`:
   - Hinzufügen, Bearbeiten und Löschen von manuellen Sperrzeiträumen (`blocked_ranges`).
   - Speichern und Validieren der iCal-URL.
 
