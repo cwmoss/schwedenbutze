@@ -13,7 +13,7 @@
 | **Task 1** | Flat-File Struktur & Migration | ✅ Erledigt | Anlegen von `content/houses/{slug}/` (JSON, Markdown-Unterseiten, Bilder) & Migration aus Sanity-DB; Rückwärtskompatibilität in APIs |
 | **Task 2** | Authentifizierung & Rollensystem | ✅ Erledigt | Login, Session-Management, Argon2id/Bcrypt Passwort-Hashing, CSRF-Schutz & Rollen (Vermieter vs. Super-Admin) |
 | **Task 3** | Backend-APIs (Haus & Unterseiten) | ✅ Erledigt | JSON/REST-Endpunkte für Stammdaten, Preise, iCal, Sperren und Unterseiten-CRUD |
-| **Task 4** | Medien- & Bildupload-Handler | ⏳ Bereit | Drag & Drop Upload, MIME-Type-Prüfung, Web-Optimierung & lokale Galerie |
+| **Task 4** | Medien- & Bildupload-Handler | ✅ Erledigt | Drag & Drop Upload, MIME-Type-Prüfung, Web-Optimierung & lokale Galerie |
 | **Task 5** | Admin-Weboberfläche (Dashboard & Editor) | ⏳ Bereit | Responsive Single-Page-UI mit Tabs für Stammdaten, Kalender, Hauptseite, Unterseiten-Editor (Markdown + Vorschau) & Galerie |
 | **Task 6** | Slowfoot-Integration & Build-Trigger | ⏳ Bereit | Flat-File-Loader in `slowfoot-config.php`, Re-Build-Endpunkt `/admin/api/build.php` |
 | **Task 7** | Tests & Vermieter-Handbuch | ⏳ Bereit | Test-Suite für Auth/APIs, Validierung aller 3 Häuser und Erstellung der Vermieter-Anleitung |
@@ -50,10 +50,10 @@
   - Speichern und Validieren der iCal-URL.
 
 ### Task 4: Medien- & Bildupload-Handler (`slft/admin/api/upload.php`)
-- [ ] Upload-Endpunkt mit Größenbeschränkung (z. B. max. 15 MB) und Whitelist erlaubter MIME-Types (JPEG, PNG, WebP).
-- [ ] Speicherung der Originale im lokalen Hausordner `content/houses/{slug}/images/`.
-- [ ] Automatische Skalierung für responsive Web-Profile (`1200x600`, `600x300`).
-- [ ] Rückgabe von Bildpfad und Markdown-Snippet für die direkte Übernahme in den Editor.
+- [x] Upload-Endpunkt mit Größenbeschränkung (z. B. max. 15 MB) und Whitelist erlaubter MIME-Types (JPEG, PNG, WebP).
+- [x] Speicherung der Originale im lokalen Hausordner `content/houses/{slug}/images/`.
+- [x] Automatische Skalierung für responsive Web-Profile (`1200x600`, `600x300`).
+- [x] Rückgabe von Bildpfad und Markdown-Snippet für die direkte Übernahme in den Editor.
 
 ### Task 5: Admin-Weboberfläche (`slft/admin/index.php`)
 - [ ] Klares, responsives HTML5/CSS-Layout (ohne externe Framework-Abhängigkeiten, voll mobilfähig).

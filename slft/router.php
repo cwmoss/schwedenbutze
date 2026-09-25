@@ -22,6 +22,28 @@ if (strpos($uri, '/api/') === 0 || strpos($uri, '/admin') === 0) {
     }
 }
 
+// 1b. Haus-Bilder aus content/houses/ direkt ausliefern
+if (strpos($uri, '/content/houses/') === 0 || strpos($uri, '/houses/') === 0) {
+    $rel_path = (strpos($uri, '/houses/') === 0) ? '/content' . $uri : $uri;
+    $content_file = $base_dir . $rel_path;
+    if (file_exists($content_file) && is_file($content_file)) {
+        $ext = strtolower(pathinfo($content_file, PATHINFO_EXTENSION));
+        $img_mimes = [
+            'jpg' => 'image/jpeg',
+            'jpeg' => 'image/jpeg',
+            'png' => 'image/png',
+            'webp' => 'image/webp',
+            'gif' => 'image/gif',
+            'svg' => 'image/svg+xml'
+        ];
+        if (isset($img_mimes[$ext])) {
+            header("Content-Type: " . $img_mimes[$ext]);
+            readfile($content_file);
+            return;
+        }
+    }
+}
+
 // 2. Statische Dateien aus dist/ direkt ausliefern (Bilder, CSS, JS, Fonts)
 $file_in_dist = $dist_dir . $uri;
 if ($uri !== '/' && file_exists($file_in_dist) && is_file($file_in_dist)) {
