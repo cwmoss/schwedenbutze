@@ -581,6 +581,9 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
         <?php endif; ?>
 
         <span class="user-tag">👤 <?= htmlspecialchars($user['name'] ?? $user['username']) ?></span>
+        <button id="build-btn" class="btn btn-secondary btn-sm" style="background: var(--accent); color: #fff; border: none; font-weight: 600;">
+            🚀 Veröffentlichen
+        </button>
         <a id="public-link" href="/<?= htmlspecialchars($initial_house) ?>" target="_blank" class="btn btn-secondary btn-sm" style="background: rgba(255,255,255,0.15); color: #fff; border: none;">
             🌐 Seite öffnen
         </a>
@@ -1018,6 +1021,40 @@ document.getElementById('logout-btn').addEventListener('click', async () => {
     await fetch('/admin/api/logout.php', { method: 'POST' });
     window.location.reload();
 });
+
+// Build / Veröffentlichen
+const buildBtn = document.getElementById('build-btn');
+if (buildBtn) {
+    buildBtn.addEventListener('click', async () => {
+        if (!confirm('Möchtest Du alle Änderungen jetzt kompilieren und die statische Website neu veröffentlichen?')) {
+            return;
+        }
+        buildBtn.disabled = true;
+        const originalText = buildBtn.innerHTML;
+        buildBtn.innerHTML = '⏳ Wird generiert...';
+        showToast('Site-Build läuft im Hintergrund...', 'info');
+
+        try {
+            const res = await fetch('/admin/api/build.php', {
+                method: 'POST',
+                headers: {
+                    'X-CSRF-Token': csrfToken
+                }
+            });
+            const data = await res.json();
+            if (data.success) {
+                showToast('🚀 ' + (data.message || 'Website erfolgreich generiert!'), 'success');
+            } else {
+                showToast('Fehler beim Build: ' + (data.error || 'Unbekannter Fehler'), 'error');
+            }
+        } catch (err) {
+            showToast('Netzwerkfehler beim Starten des Builds.', 'error');
+        } finally {
+            buildBtn.disabled = false;
+            buildBtn.innerHTML = originalText;
+        }
+    });
+}
 
 // ==========================================
 // DATA LOADING

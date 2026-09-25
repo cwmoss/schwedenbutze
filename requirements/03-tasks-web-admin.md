@@ -15,7 +15,7 @@
 | **Task 3** | Backend-APIs (Haus & Unterseiten) | ✅ Erledigt | JSON/REST-Endpunkte für Stammdaten, Preise, iCal, Sperren und Unterseiten-CRUD |
 | **Task 4** | Medien- & Bildupload-Handler | ✅ Erledigt | Drag & Drop Upload, MIME-Type-Prüfung, Web-Optimierung & lokale Galerie |
 | **Task 5** | Admin-Weboberfläche (Dashboard & Editor) | ✅ Erledigt | Responsive Single-Page-UI mit Tabs für Stammdaten, Kalender, Hauptseite, Unterseiten-Editor (Markdown + Vorschau) & Galerie |
-| **Task 6** | Slowfoot-Integration & Build-Trigger | ⏳ Bereit | Flat-File-Loader in `slowfoot-config.php`, Re-Build-Endpunkt `/admin/api/build.php` |
+| **Task 6** | Slowfoot-Integration & Build-Trigger | ✅ Erledigt | Flat-File-Loader in `slowfoot-config.php`, Re-Build-Endpunkt `/admin/api/build.php` |
 | **Task 7** | Tests & Vermieter-Handbuch | ⏳ Bereit | Test-Suite für Auth/APIs, Validierung aller 3 Häuser und Erstellung der Vermieter-Anleitung |
 
 ---
@@ -69,8 +69,8 @@
   - **Medien:** Bildübersicht mit Drag & Drop Upload und Löschfunktion.
 
 ### Task 6: Slowfoot-Integration & Build-Trigger
-- [ ] Anlegen eines lokalen Flat-File-Loaders in `slft/slowfoot-config.php`, der Häuser und Unterseiten direkt aus `content/houses/` lädt.
-- [ ] Endpunkt `slft/admin/api/build.php`:
+- [x] Anlegen eines lokalen Flat-File-Loaders in `slft/slowfoot-config.php`, der Häuser und Unterseiten direkt aus `content/houses/` lädt.
+- [x] Endpunkt `slft/admin/api/build.php`:
   - Führt bei Klick auf *„Änderungen veröffentlichen“* den Build-Prozess für die betroffenen Seiten aus.
   - Gibt Statusmeldung (Erfolg / Fehler) und Link zur erzeugten Seite zurück.
 

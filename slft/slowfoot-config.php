@@ -4,9 +4,13 @@ use slowfoot\configuration;
 use slowfoot\image\profile;
 use slowfoot\image\configuration as img_config;
 use slowfoot\loader\json;
+use slowfoot\loader\houses;
 use slowfoot_plugin\sanity;
 
 require_once("sanity_block_serializer.php");
+require_once(__DIR__ . "/src/lib/flatfile_loader.php");
+
+houses::register_hooks();
 
 return new configuration(
   site_name: "Schwedenbutze",
@@ -19,7 +23,8 @@ return new configuration(
     new sanity\sanity('emjk7lsc', use_cdn: true)
   ],
   sources: [
-    "sanity" => sanity\sanity::data_loader(...)
+    "sanity" => sanity\sanity::data_loader(...),
+    "houses" => houses::load(...)
   ],
   assets: new img_config(
     download: true,
