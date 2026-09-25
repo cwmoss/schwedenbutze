@@ -16,7 +16,7 @@
 | **Task 4** | Medien- & Bildupload-Handler | ✅ Erledigt | Drag & Drop Upload, MIME-Type-Prüfung, Web-Optimierung & lokale Galerie |
 | **Task 5** | Admin-Weboberfläche (Dashboard & Editor) | ✅ Erledigt | Responsive Single-Page-UI mit Tabs für Stammdaten, Kalender, Hauptseite, Unterseiten-Editor (Markdown + Vorschau) & Galerie |
 | **Task 6** | Slowfoot-Integration & Build-Trigger | ✅ Erledigt | Flat-File-Loader in `slowfoot-config.php`, Re-Build-Endpunkt `/admin/api/build.php` |
-| **Task 7** | Tests & Vermieter-Handbuch | ⏳ Bereit | Test-Suite für Auth/APIs, Validierung aller 3 Häuser und Erstellung der Vermieter-Anleitung |
+| **Task 7** | Tests & Vermieter-Handbuch | ✅ Erledigt | Test-Suite für Auth/APIs, Validierung aller 3 Häuser und Erstellung der Vermieter-Anleitung |
 
 ---
 
@@ -75,5 +75,5 @@
   - Gibt Statusmeldung (Erfolg / Fehler) und Link zur erzeugten Seite zurück.
 
 ### Task 7: Tests & Vermieter-Handbuch
-- [ ] Automatisierte Tests für Auth, House-API, Subpages-API und Uploads (`slft/tests/test_admin_api.php`).
-- [ ] Bereitstellung eines bebilderten Handbuchs [`requirements/vermieter-anleitung-web-admin.md`](./vermieter-anleitung-web-admin.md) für Vermieter.
+- [x] Automatisierte Tests für Auth, House-API, Subpages-API und Uploads (`slft/tests/test_admin_auth.php`, `test_admin_apis.php`, `test_admin_upload.php`, `test_admin_ui.php`, `test_admin_build.php`).
+- [x] Bereitstellung eines bebilderten Handbuchs [`requirements/vermieter-anleitung-web-admin.md`](./vermieter-anleitung-web-admin.md) für Vermieter.
