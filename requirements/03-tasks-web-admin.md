@@ -14,7 +14,7 @@
 | **Task 2** | Authentifizierung & Rollensystem | ✅ Erledigt | Login, Session-Management, Argon2id/Bcrypt Passwort-Hashing, CSRF-Schutz & Rollen (Vermieter vs. Super-Admin) |
 | **Task 3** | Backend-APIs (Haus & Unterseiten) | ✅ Erledigt | JSON/REST-Endpunkte für Stammdaten, Preise, iCal, Sperren und Unterseiten-CRUD |
 | **Task 4** | Medien- & Bildupload-Handler | ✅ Erledigt | Drag & Drop Upload, MIME-Type-Prüfung, Web-Optimierung & lokale Galerie |
-| **Task 5** | Admin-Weboberfläche (Dashboard & Editor) | ⏳ Bereit | Responsive Single-Page-UI mit Tabs für Stammdaten, Kalender, Hauptseite, Unterseiten-Editor (Markdown + Vorschau) & Galerie |
+| **Task 5** | Admin-Weboberfläche (Dashboard & Editor) | ✅ Erledigt | Responsive Single-Page-UI mit Tabs für Stammdaten, Kalender, Hauptseite, Unterseiten-Editor (Markdown + Vorschau) & Galerie |
 | **Task 6** | Slowfoot-Integration & Build-Trigger | ⏳ Bereit | Flat-File-Loader in `slowfoot-config.php`, Re-Build-Endpunkt `/admin/api/build.php` |
 | **Task 7** | Tests & Vermieter-Handbuch | ⏳ Bereit | Test-Suite für Auth/APIs, Validierung aller 3 Häuser und Erstellung der Vermieter-Anleitung |
 
@@ -56,9 +56,9 @@
 - [x] Rückgabe von Bildpfad und Markdown-Snippet für die direkte Übernahme in den Editor.
 
 ### Task 5: Admin-Weboberfläche (`slft/admin/index.php`)
-- [ ] Klares, responsives HTML5/CSS-Layout (ohne externe Framework-Abhängigkeiten, voll mobilfähig).
-- [ ] Login-Formular mit CSRF-Token.
-- [ ] Navigation zwischen den Bereichen:
+- [x] Klares, responsives HTML5/CSS-Layout (ohne externe Framework-Abhängigkeiten, voll mobilfähig).
+- [x] Login-Formular mit CSRF-Token.
+- [x] Navigation zwischen den Bereichen:
   - **Konditionen & Routing:** Formularfelder für Übernachtungspreis, Mindestaufenthalt, Endreinigung, Gästelimit, Kontaktdaten.
   - **Belegungskalender:** Übersicht belegter Zeiträume, Monatsvorschau, Formular für neue manuelle Sperren, Google-Kalender Link.
   - **Haus-Hauptseite:** Hero-Bild-Auswahl, Willkommenstext, Ausführliche Vorstellung, Verwaltung der Infobox-Kacheln mit Icon-Vorschau.
