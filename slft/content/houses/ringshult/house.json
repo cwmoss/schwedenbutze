@@ -10,7 +10,8 @@
         "notify_cc": "buchung@schwedenbutze.de"
     },
     "calendars": {
-        "ical_url": ""
+        "ical_url": "",
+        "cache_ttl_seconds": 300
     },
     "blocked_dates": [
         {
@@ -47,7 +48,7 @@
             "text": "Genießen Sie die ruhige Umgebung von Wiesen, Wäldern und Weiden."
         },
         {
-            "icon": "fa-biking",
+            "icon": "fa-sun",
             "title": "Freizeitmöglichkeiten",
             "text": "Entdecken Sie Wander- und Radwege, Badeseen und den Åsnen Nationalpark."
         },
@@ -57,7 +58,7 @@
             "text": "Modern und liebevoll renoviertes Ferienhaus mit allen Annehmlichkeiten."
         },
         {
-            "icon": "fa-map-marker-alt",
+            "icon": "fa-sun",
             "title": "Perfekte Lage",
             "text": "Ruhig und abgeschieden, aber mit guter Anbindung an Sehenswürdigkeiten und Städte."
         },
@@ -67,15 +68,9 @@
             "text": "Lesen Sie die Meinungen unserer bisherigen Gäste und lassen Sie sich inspirieren."
         },
         {
-            "icon": "fa-calendar-check",
+            "icon": "fa-sun",
             "title": "Einfach buchen",
             "text": "Über unseren sicheren Online-Kalender Verfügbarkeiten prüfen und direkt buchen."
         }
-    ],
-    "sections_order": [
-        "hausgebrauch",
-        "nybygget",
-        "geschichte",
-        "warum"
     ]
 }

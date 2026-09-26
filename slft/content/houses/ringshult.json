@@ -1,36 +1,76 @@
 {
-  "id": "ringshult",
-  "title": "Ringshult",
-  "slug": "ringshult",
-  "active": true,
-  "landlord": {
-    "name": "Vermieter Ringshult",
-    "email": "ringshult@schwedenbutze.de",
-    "phone": "+46 234 567890",
-    "notify_cc": "buchung@schwedenbutze.de"
-  },
-  "calendars": {
-    "ical_url": ""
-  },
-  "blocked_dates": [
-    {
-      "from": "2026-07-11",
-      "to": "2026-07-25",
-      "note": "Belegt"
+    "id": "ringshult",
+    "title": "Ringshult",
+    "slug": "ringshult",
+    "active": true,
+    "landlord": {
+        "name": "Vermieter Ringshult",
+        "email": "ringshult@schwedenbutze.de",
+        "phone": "+46 234 567890",
+        "notify_cc": "buchung@schwedenbutze.de"
     },
-    {
-      "from": "2026-09-05",
-      "to": "2026-09-19",
-      "note": "Herbstferien"
-    }
-  ],
-  "details": {
-    "max_guests": 4,
-    "bedrooms": 2,
-    "bathrooms": 1,
-    "min_stay_nights": 4,
-    "price_per_night_eur": 85,
-    "cleaning_fee_eur": 70
-  },
-  "teaser": "Willkommen in unserem charmanten Ferienhaus in Småland! 🌿"
+    "calendars": {
+        "ical_url": "",
+        "cache_ttl_seconds": 300
+    },
+    "blocked_dates": [
+        {
+            "from": "2026-07-11",
+            "to": "2026-07-25",
+            "note": "Belegt"
+        },
+        {
+            "from": "2026-09-05",
+            "to": "2026-09-19",
+            "note": "Herbstferien"
+        }
+    ],
+    "details": {
+        "max_guests": 4,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "min_stay_nights": 4,
+        "price_per_night_eur": 85,
+        "cleaning_fee_eur": 70
+    },
+    "teaser": "Willkommen in unserem charmanten Ferienhaus in Småland! 🌿",
+    "hero": {
+        "image": "IMG_7897.jpeg",
+        "teaser": "Willkommen in unserem charmanten Ferienhaus in Småland! 🌿",
+        "body_markdown": "**Ein Ort der Ruhe und Erholung**\n\nVersteckt zwischen den sanften Hügeln, weiten Wiesen und dichten Wäldern von Småland, liegt unser gemütliches Ferienhaus – ein wahrer Rückzugsort vom Alltag. Hier können Sie die Stille der Natur genießen, sich von Vogelgesang wecken lassen und die frische Luft tief einatmen.\n\n**Allein, aber nie einsam**\n\nUnser Haus liegt zwar ruhig und abgeschieden, aber niemals isoliert. Nur 7 km entfernt befindet sich ein idyllischer Badesee, der sich perfekt für erfrischende Schwimmrunden oder entspannte Nachmittage am Wasser eignet. In nur einer halben Stunde erreichen Sie den beeindruckenden Åsnen Nationalpark, ein Paradies für Naturliebhaber und Abenteuerlustige.\n\n**Natur pur**\n\nHier können Sie lange Spaziergänge durch die unberührte Natur unternehmen, Radfahren oder einfach nur die Seele baumeln lassen. Unser Ferienhaus bietet Ihnen den perfekten Mix aus Erholung und Aktivitäten, ganz nach Ihrem Geschmack.\n\n**Ihr persönlicher Rückzugsort**\n\nWir freuen uns darauf, Ihnen einen unvergesslichen Aufenthalt zu bieten. Tauchen Sie ein in die Schönheit Smålands und lassen Sie den Alltagsstress hinter sich.\n\nHerzlich willkommen!"
+    },
+    "infotitle": "Entdecken Sie unser Ferienhaus",
+    "infoheadline": "Willkommen in Ihrem gemütlichen Rückzugsort in Småland! Hier finden Sie alles, was Sie für einen erholsamen und unvergesslichen Aufenthalt benötigen. Unsere Highlights im Überblick:",
+    "infoboxes": [
+        {
+            "icon": "fa-tree",
+            "title": "Natur pur erleben",
+            "text": "Genießen Sie die ruhige Umgebung von Wiesen, Wäldern und Weiden."
+        },
+        {
+            "icon": "fa-sun",
+            "title": "Freizeitmöglichkeiten",
+            "text": "Entdecken Sie Wander- und Radwege, Badeseen und den Åsnen Nationalpark."
+        },
+        {
+            "icon": "fa-home",
+            "title": "Gemütliche Unterkunft",
+            "text": "Modern und liebevoll renoviertes Ferienhaus mit allen Annehmlichkeiten."
+        },
+        {
+            "icon": "fa-sun",
+            "title": "Perfekte Lage",
+            "text": "Ruhig und abgeschieden, aber mit guter Anbindung an Sehenswürdigkeiten und Städte."
+        },
+        {
+            "icon": "fa-star",
+            "title": "Gästebewertungen",
+            "text": "Lesen Sie die Meinungen unserer bisherigen Gäste und lassen Sie sich inspirieren."
+        },
+        {
+            "icon": "fa-sun",
+            "title": "Einfach buchen",
+            "text": "Über unseren sicheren Online-Kalender Verfügbarkeiten prüfen und direkt buchen."
+        }
+    ]
 }

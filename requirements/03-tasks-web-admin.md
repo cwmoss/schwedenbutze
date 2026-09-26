@@ -77,3 +77,4 @@
 ### Task 7: Tests & Vermieter-Handbuch
 - [x] Automatisierte Tests für Auth, House-API, Subpages-API und Uploads (`slft/tests/test_admin_auth.php`, `test_admin_apis.php`, `test_admin_upload.php`, `test_admin_ui.php`, `test_admin_build.php`).
 - [x] Bereitstellung eines bebilderten Handbuchs [`requirements/vermieter-anleitung-web-admin.md`](./vermieter-anleitung-web-admin.md) für Vermieter.
+- [x] Dokumentation der Test-Anleitung für Entwickler & Tester [`requirements/test-anleitung-web-admin.md`](./test-anleitung-web-admin.md).
