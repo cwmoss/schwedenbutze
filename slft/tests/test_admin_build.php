@@ -4,6 +4,8 @@
  * Integration Test für Slowfoot-Integration & Build-Trigger (Task 6)
  */
 
+require_once __DIR__ . '/../vendor/autoload.php';
+
 echo "🔍 Starte Tests für Slowfoot-Integration & Build-Trigger (Task 6)...\n\n";
 
 function run_build_request(string $method, array $headers = [], ?array $session_user = null, ?string $csrf = null): array {
@@ -25,6 +27,7 @@ function run_build_request(string $method, array $headers = [], ?array $session_
     register_shutdown_function(function() {
         $output = ob_get_clean();
         $code = http_response_code();
+        $code = ($code === false || $code === 0) ? 200 : $code;
         echo "STATUS_CODE:" . $code . "\n";
         echo "BODY_START\n" . $output;
     });
@@ -103,7 +106,7 @@ echo "✅ Test 4: Build-Trigger führt slowfoot build erfolgreich aus und liefer
 
 // 5. Test: Flat-File Loader Generator prüft alle Häuser und Unterseiten
 require_once __DIR__ . '/../src/lib/flatfile_loader.php';
-$conf = require __DIR__ . '/../slowfoot-config.php';
+$conf = \slowfoot\configuration::load(__DIR__ . '/..');
 $dummy_db = $conf->get_store();
 $docs = iterator_to_array(\slowfoot\loader\houses::load($conf, $dummy_db));
 

@@ -12,7 +12,8 @@ use slowfoot\admin\auth;
 header('Content-Type: application/json; charset=utf-8');
 
 // 1. Authentifizierung erforderlich
-$user = auth::require_login();
+auth::require_login();
+$user = auth::user();
 
 // 2. Nur POST-Anfragen zulassen
 if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
@@ -36,49 +37,34 @@ if (!file_exists($slowfoot_bin)) {
     exit;
 }
 
-// Build-Befehl ausführen
-$cmd = escapeshellcmd($slowfoot_bin) . ' build';
-$descriptors = [
-    0 => ['pipe', 'r'],
-    1 => ['pipe', 'w'],
-    2 => ['pipe', 'w'],
-];
+// Build-Befehl ausführen mit -f (frische Datenübernahme) und stderr-Umleitung
+$cmd = 'cd ' . escapeshellarg($base_dir) . ' && ' . escapeshellcmd($slowfoot_bin) . ' build -f 2>&1';
+$output_lines = [];
+$exit_code = 0;
 
-$proc = proc_open($cmd, $descriptors, $pipes, $base_dir);
-
-if (!is_resource($proc)) {
-    http_response_code(500);
-    echo json_encode([
-        'success' => false,
-        'error' => 'Prozess konnte nicht gestartet werden.'
-    ]);
-    exit;
-}
-
-fclose($pipes[0]);
-$stdout = stream_get_contents($pipes[1]);
-$stderr = stream_get_contents($pipes[2]);
-fclose($pipes[1]);
-fclose($pipes[2]);
-
-$exit_code = proc_close($proc);
+exec($cmd, $output_lines, $exit_code);
+$output_str = implode("\n", $output_lines);
 
 if ($exit_code === 0) {
     $house_id = $user['house_id'] ?? null;
     $preview_link = $house_id ? ('/' . $house_id) : '/';
 
+    // Letzte aussagekräftige Zeilen für das UI-Feedback ermitteln
+    $summary_lines = array_slice($output_lines, -5);
+
+    http_response_code(200);
     echo json_encode([
         'success' => true,
         'message' => 'Website erfolgreich generiert!',
         'built_at' => date('c'),
         'preview_url' => $preview_link,
-        'output' => trim($stdout)
+        'summary' => implode(' | ', array_map('trim', $summary_lines))
     ]);
 } else {
     http_response_code(500);
     echo json_encode([
         'success' => false,
         'error' => 'Fehler beim Generieren der Website (Exit Code ' . $exit_code . ')',
-        'output' => trim($stdout . "\n" . $stderr)
+        'output' => $output_str
     ]);
 }
